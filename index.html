@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merriweather's Register of Agreeable Occurrences</title>
+  <meta name="description" content="All the news that's fit to invent. Serving Gentle Rapids since 1987, probably.">
+  <meta property="og:title" content="Merriweather's Register of Agreeable Occurrences">
+  <meta property="og:description" content="All the news that's fit to invent. Every story guaranteed false and pleasant.">
+  <meta property="og:image" content="https://register.bumbloobooks.com/register-hub.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="768">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://register.bumbloobooks.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --paper: #ece3cd; --page: #f9f3e3; --ink: #2b2419; --faded: #6b5f4b;
+  --red: #9e2b25; --teal: #2f6f6a;
+}
+body { background: var(--paper); color: var(--ink); font-family: 'Crimson Text', Georgia, serif; min-height: 100vh; }
+
+.hub-header {
+  text-align: center; padding: 56px 20px 36px;
+  background: var(--page);
+  border-bottom: 4px double var(--ink);
+}
+.hub-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; }
+.hub-merri { font-family: 'Caveat', cursive; font-weight: 700; color: var(--teal); font-size: clamp(2.2rem, 7vw, 3.4rem); margin-top: 14px; }
+.hub-register { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(3rem, 12vw, 6.4rem); letter-spacing: 0.06em; line-height: 1; }
+.hub-of { font-family: 'Playfair Display', serif; font-weight: 700; letter-spacing: 0.32em; font-size: clamp(0.8rem, 2.8vw, 1.3rem); margin-top: 8px; }
+.hub-motto { font-style: italic; margin-top: 14px; font-size: 1.05rem; }
+.hub-motto::before, .hub-motto::after { content: " \25C6 "; font-style: normal; font-size: 0.7em; vertical-align: 2px; }
+.hub-sub { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faded); margin-top: 16px; }
+
+.hub-divider { text-align: center; font-weight: 600; letter-spacing: 0.28em; font-size: 0.82rem; text-transform: uppercase; padding: 36px 20px 6px; color: var(--faded); }
+
+.hub-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px; max-width: 1080px; margin: 0 auto; padding: 18px 24px 80px;
+}
+a.issue-card {
+  text-decoration: none; color: var(--ink); display: block;
+  background: var(--page); border: 1px solid #d8cba8;
+  box-shadow: 0 2px 0 #d8cba8, 0 12px 28px rgba(60,48,24,0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+a.issue-card:hover { transform: translate(-3px, -3px); box-shadow: 3px 5px 0 #d8cba8, 0 18px 36px rgba(60,48,24,0.24); }
+a.issue-card:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+.card-cover { border-bottom: 3px double var(--ink); background: #f7f1e1; }
+.card-cover img { width: 100%; height: auto; display: block; }
+.card-body { padding: 18px 20px 22px; }
+.card-num { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); }
+.card-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.3rem; line-height: 1.15; margin: 8px 0 6px; }
+.card-desc { font-size: 0.98rem; line-height: 1.5; color: var(--faded); }
+.card-read { display: inline-block; margin-top: 12px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; border-bottom: 2px solid var(--red); padding-bottom: 2px; }
+
+.hub-foot { text-align: center; padding: 28px 20px 48px; font-size: 0.85rem; font-style: italic; color: var(--faded); border-top: 1px solid #d8cba8; }
+  </style>
+</head>
+<body>
+
+<header class="hub-header">
+  <div class="hub-eyebrow">Gentle Rapids' Most Trusted Source of Wholly Invented News</div>
+  <div class="hub-merri">Merriweather's</div>
+  <h1 class="hub-register">REGISTER</h1>
+  <div class="hub-of">OF AGREEABLE OCCURRENCES</div>
+  <div class="hub-motto">All the News That's Fit to Invent</div>
+  <div class="hub-sub">Serving Gentle Rapids since 1987, probably &middot; Every story guaranteed false and pleasant</div>
+</header>
+
+<div class="hub-divider">— The Issues —</div>
+
+<main class="hub-grid">
+
+  <a class="issue-card" href="issues/vol1no1/index.html">
+    <div class="card-cover">
+      <img src="images/vol1no1-cover.png" alt="Vol. I, No. 1 — Man Returns Library Book 47 Years Overdue; Town Responds With Parade" loading="lazy">
+    </div>
+    <div class="card-body">
+      <p class="card-num">Vol. I, No. 1 &middot; June 10, 2026</p>
+      <h2 class="card-title">Man Returns Library Book 47 Years Overdue; Town Responds With Parade</h2>
+      <p class="card-desc">Plus: the friendliest duck identified at last, 66 million years of good news, the Weekly Pelican Fact (as negotiated), and personals for the wonderfully weird.</p>
+      <span class="card-read">Read This Issue &#8594;</span>
+    </div>
+  </a>
+
+</main>
+
+<footer class="hub-foot">
+  Published weekly-ish from the second floor of the Gentle Rapids Grange Hall, above the bees.<br>
+  A Bumbloo Books publication. No facts were used in the making of this newspaper.
+</footer>
+
+</body>
+</html>

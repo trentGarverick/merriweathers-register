@@ -1,0 +1,9 @@
+# Netlify state (contains site ID — keep local, not in git)
+.netlify/
+
+# Node (if tooling gets added later)
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

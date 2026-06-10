@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Man Returns Library Book 47 Years Overdue; Town Responds With Parade — Merriweather's Register</title>
+  <meta name="description" content="Vol. I, No. 1 of Merriweather's Register of Agreeable Occurrences. All the news that's fit to invent.">
+  <meta property="og:title" content="Man Returns Library Book 47 Years Overdue; Town Responds With Parade — Merriweather's Register">
+  <meta property="og:description" content="Vol. I, No. 1 · Wholly invented, entirely pleasant. Plus: the friendliest duck, identified at last.">
+  <meta property="og:image" content="https://register.bumbloobooks.com/images/vol1no1-cover.png">
+  <meta property="og:image:width" content="1400">
+  <meta property="og:image:height" content="1978">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://register.bumbloobooks.com/issues/vol1no1/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Special+Elite&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:   #ece3cd;   /* desk surface */
+  --page:    #f9f3e3;   /* the sheet */
+  --ink:     #2b2419;
+  --faded:   #6b5f4b;
+  --red:     #9e2b25;   /* Doris's pencil */
+  --teal:    #2f6f6a;   /* the Mild River */
+  --gold:    #c8923a;
+  --ad-bg:   #f6ecd2;
+  --rule:    #2b2419;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Crimson Text', Georgia, serif;
+  overflow: hidden;
+}
+
+/* ── Nav ─────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--page);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 14px; height: 50px;
+  border-bottom: 3px double var(--ink);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 8px; }
+.nav-back {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink); text-decoration: none;
+  opacity: 0.75; transition: opacity 0.15s;
+}
+.nav-back:hover { opacity: 1; }
+.nav-title {
+  font-family: 'Playfair Display', serif; font-weight: 800;
+  font-size: 0.92rem; letter-spacing: 0.1em;
+}
+.nav-counter { font-size: 0.72rem; font-weight: 600; opacity: 0.55; }
+.nav-btn, .nav-share {
+  background: none; border: none; cursor: pointer; color: var(--ink);
+  font-size: 1.05rem; padding: 8px; opacity: 0.75; transition: opacity 0.15s;
+  font-family: inherit;
+}
+.nav-btn:hover, .nav-share:hover { opacity: 1; }
+.nav-btn:disabled { opacity: 0.2; cursor: default; }
+.nav-share { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; }
+
+/* ── Track & pages ───────────────────────────────────── */
+.track {
+  display: flex; height: 100%;
+  transition: transform 0.45s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) { .track { transition: none; } }
+.page {
+  flex: 0 0 100vw; height: 100%;
+  overflow-y: auto;
+  padding: 70px 14px 70px;
+}
+.sheet {
+  max-width: 740px; margin: 0 auto 28px;
+  background: var(--page);
+  border: 1px solid #d8cba8;
+  box-shadow: 0 2px 0 #d8cba8, 0 14px 34px rgba(60, 48, 24, 0.22);
+  padding: 40px 44px 52px;
+}
+@media (max-width: 560px) { .sheet { padding: 26px 20px 38px; } }
+
+/* ── Shared editorial bits ───────────────────────────── */
+.kicker {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; text-align: center; color: var(--red);
+  margin-bottom: 10px;
+}
+.head {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  text-align: center; line-height: 1.04; margin-bottom: 10px;
+  font-size: clamp(1.7rem, 5.2vw, 2.6rem);
+}
+.subhead {
+  font-family: 'Playfair Display', serif; font-weight: 700;
+  text-align: center; font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+  letter-spacing: 0.04em; margin-bottom: 12px;
+}
+.deck {
+  text-align: center; font-style: italic; font-size: 1.05rem;
+  color: var(--faded); margin: 0 auto 18px; max-width: 56ch;
+}
+.byline {
+  text-align: center; font-size: 0.84rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px;
+}
+.byline span { color: var(--teal); }
+.rule-orn {
+  display: flex; align-items: center; gap: 12px; margin: 18px 0;
+}
+.rule-orn::before, .rule-orn::after {
+  content: ""; flex: 1; border-top: 1px solid var(--ink);
+}
+.rule-orn i {
+  width: 9px; height: 9px; background: var(--ink);
+  transform: rotate(45deg); flex: 0 0 auto;
+}
+.dbl { border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); height: 7px; margin: 14px 0 18px; }
+
+.body-copy p { font-size: 1.06rem; line-height: 1.62; margin-bottom: 14px; }
+.body-copy p:first-of-type::first-letter {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  float: left; font-size: 3.3em; line-height: 0.82;
+  padding: 4px 8px 0 0;
+}
+.dateline { font-weight: 600; letter-spacing: 0.06em; }
+
+/* Doris's edits — the signature */
+.edit { position: relative; white-space: nowrap; }
+.edit s { text-decoration: none; position: relative; }
+.edit s::after {
+  content: ""; position: absolute; left: -2px; right: -2px; top: 55%;
+  border-top: 3px solid var(--red); transform: rotate(-2deg); opacity: 0.85;
+}
+.edit .fix {
+  font-family: 'Caveat', cursive; color: var(--red); font-weight: 700;
+  font-size: 1.15em; position: absolute; left: 50%; top: -0.95em;
+  transform: translateX(-50%) rotate(-3deg); white-space: nowrap;
+}
+.dp-sig { font-family: 'Caveat', cursive; font-size: 1.6rem; color: var(--red); }
+
+.pull {
+  border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
+  margin: 22px 10px; padding: 14px 8px;
+  font-family: 'Playfair Display', serif; font-weight: 700;
+  font-size: 1.25rem; line-height: 1.3; text-align: center;
+}
+.pull small { display: block; font-family: 'Crimson Text', serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; color: var(--faded); }
+
+.note-box {
+  border: 1px solid var(--ink); padding: 16px 18px; margin: 20px 0;
+  background: rgba(47, 111, 106, 0.06);
+}
+.note-box .nb-title {
+  font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 0.78rem; margin-bottom: 10px; text-align: center;
+}
+.note-box ul { list-style: none; }
+.note-box li { font-size: 0.98rem; line-height: 1.5; padding: 4px 0; border-bottom: 1px dotted #b9aa84; }
+.note-box li:last-child { border-bottom: none; }
+
+/* Ads */
+.ad {
+  background: var(--ad-bg); border: 2px solid var(--ink);
+  outline: 1px solid var(--ink); outline-offset: 3px;
+  padding: 22px 20px; margin: 26px 6px 10px; text-align: center;
+}
+.ad-head { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.3rem, 4vw, 1.9rem); letter-spacing: 0.02em; }
+.ad-sub { font-style: italic; font-size: 1.02rem; margin: 6px 0 12px; }
+.ad-points { font-size: 0.96rem; line-height: 1.7; }
+.ad-price { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.05rem; margin-top: 12px; letter-spacing: 0.04em; }
+.ad-fine { font-size: 0.72rem; color: var(--faded); margin-top: 10px; line-height: 1.45; }
+.ad.small { padding: 14px 16px; }
+.ad.small .ad-head { font-size: 1.15rem; }
+
+/* Cover page */
+.cover-sheet { text-align: center; padding-top: 30px; }
+.cv-eyebrow { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+.cv-merri { font-family: 'Caveat', cursive; font-weight: 700; color: var(--teal); font-size: clamp(2rem, 7vw, 3rem); margin-top: 14px; }
+.cv-register { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(2.9rem, 11.5vw, 5.4rem); letter-spacing: 0.06em; line-height: 1; }
+.cv-of { font-family: 'Playfair Display', serif; font-weight: 700; letter-spacing: 0.3em; font-size: clamp(0.8rem, 2.6vw, 1.25rem); margin-top: 6px; }
+.cv-motto { font-style: italic; margin: 12px 0; font-size: 1rem; }
+.cv-dateline {
+  display: flex; justify-content: space-between; gap: 8px;
+  border-top: 1px solid var(--ink); border-bottom: 4px solid var(--ink);
+  padding: 6px 2px 8px; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em;
+  margin: 10px 0 24px;
+}
+.cv-lead { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.7rem, 6.4vw, 3rem); line-height: 1.06; }
+.cv-deck { font-style: italic; color: var(--faded); margin: 14px auto 6px; max-width: 52ch; }
+.cv-teaser { margin-top: 18px; }
+.cv-teaser .t1 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: clamp(1.05rem, 3.4vw, 1.45rem); }
+.cv-teaser .t2 { font-size: 0.9rem; font-weight: 600; color: var(--faded); margin-top: 2px; }
+.cv-foot { font-size: 0.78rem; font-style: italic; color: var(--faded); border-top: 1px solid var(--ink); margin-top: 26px; padding-top: 10px; }
+.stamp {
+  display: inline-block; border: 3px solid var(--red); border-radius: 10px;
+  color: var(--red); font-family: 'Special Elite', monospace;
+  padding: 6px 14px; transform: rotate(-6deg); opacity: 0.85;
+  font-size: 0.85rem; margin-top: 18px;
+}
+
+/* Masthead page */
+.staff { list-style: none; margin-top: 8px; }
+.staff li { padding: 13px 4px; border-bottom: 1px dotted #b9aa84; font-size: 1.02rem; line-height: 1.55; }
+.staff li:last-child { border-bottom: none; }
+.staff .who { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.06rem; }
+.staff .what { font-weight: 600; color: var(--teal); font-size: 0.86rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Contents */
+.toc { list-style: none; margin-top: 6px; }
+.toc li {
+  display: flex; align-items: baseline; gap: 8px;
+  padding: 9px 2px; font-size: 1.05rem;
+}
+.toc .dots { flex: 1; border-bottom: 2px dotted #b9aa84; transform: translateY(-4px); }
+.toc .pg { font-weight: 600; }
+.toc .sec { font-family: 'Playfair Display', serif; font-weight: 700; }
+.toc .by { font-size: 0.85rem; color: var(--faded); font-style: italic; }
+
+/* Memo & typewriter pieces */
+.typed { font-family: 'Special Elite', monospace; }
+.typed p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 14px; }
+.memo-head { font-family: 'Special Elite', monospace; font-size: 0.92rem; line-height: 1.8; border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 18px; }
+.typed-label { font-family: 'Special Elite', monospace; font-weight: 400; letter-spacing: 0.1em; font-size: 0.95rem; color: var(--red); margin: 18px 0 6px; }
+
+/* History */
+.hist { list-style: none; }
+.hist li { padding: 13px 2px; border-bottom: 1px solid #d8cba8; font-size: 1.04rem; line-height: 1.58; }
+.hist .yr { font-family: 'Playfair Display', serif; font-weight: 900; color: var(--teal); margin-right: 8px; }
+.footnotes { font-size: 0.85rem; color: var(--faded); line-height: 1.7; margin-top: 16px; border-top: 1px solid var(--ink); padding-top: 10px; }
+
+/* Poem */
+.poem { text-align: center; font-size: 1.12rem; line-height: 1.9; font-style: italic; margin: 18px 0; }
+.poem-note { text-align: center; }
+
+/* Letters & counsel */
+.letter { margin-bottom: 22px; }
+.letter .q { font-size: 1.04rem; line-height: 1.6; }
+.letter .q::before { content: "✉ "; color: var(--teal); }
+.letter .a {
+  margin: 10px 0 0 22px; padding: 10px 14px; border-left: 3px solid var(--red);
+  font-size: 1.02rem; line-height: 1.6; background: rgba(158, 43, 37, 0.05);
+}
+
+/* Obit */
+.obit-name { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.5rem, 4.6vw, 2.1rem); text-align: center; }
+.obit-dates { text-align: center; font-weight: 600; letter-spacing: 0.2em; margin: 4px 0 16px; }
+
+/* Corrections */
+.corrections li { font-style: italic; }
+
+/* Classifieds */
+.cl-section { font-family: 'Special Elite', monospace; font-size: 1rem; letter-spacing: 0.18em; border-bottom: 2px solid var(--ink); margin: 22px 0 8px; padding-bottom: 4px; }
+.cl { list-style: none; }
+.cl li { font-family: 'Special Elite', monospace; font-size: 0.88rem; line-height: 1.65; padding: 9px 2px; border-bottom: 1px dotted #b9aa84; }
+.cl b { letter-spacing: 0.05em; }
+
+/* Personals */
+.pers { list-style: none; }
+.pers li { padding: 15px 2px; border-bottom: 1px solid #d8cba8; font-size: 1.02rem; line-height: 1.6; }
+.mv { font-family: 'Caveat', cursive; color: var(--teal); font-weight: 700; font-size: 1.25rem; display: block; margin-top: 4px; transform: rotate(-1deg); }
+
+/* Back page */
+.sub-box { border: 3px double var(--ink); text-align: center; padding: 22px 18px; margin: 20px 0; }
+.next-tease { text-align: center; font-style: italic; margin-top: 18px; }
+
+/* Dots pager */
+.dot-row {
+  position: fixed; bottom: 12px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: center; gap: 7px; flex-wrap: wrap; padding: 0 12px;
+}
+.dot {
+  width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--ink);
+  background: var(--page); cursor: pointer; padding: 0; opacity: 0.6; transition: all 0.15s;
+}
+.dot:hover { opacity: 1; }
+.dot.active { background: var(--red); border-color: var(--red); opacity: 1; }
+.dot:focus-visible, .nav-btn:focus-visible, .nav-share:focus-visible, .nav-back:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+.fine-center { text-align: center; font-size: 0.85rem; color: var(--faded); font-style: italic; margin-top: 16px; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-back" href="../../index.html">&#8592; The Register</a>
+  </div>
+  <div class="nav-title">VOL. I, No. 1</div>
+  <div class="nav-right">
+    <button class="nav-share" onclick="shareIssue()" aria-label="Copy link">SHARE</button>
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-btn" id="btnPrev" onclick="prev()" aria-label="Previous page">&#8592;</button>
+    <button class="nav-btn" id="btnNext" onclick="next()" aria-label="Next page">&#8594;</button>
+  </div>
+</nav>
+
+<div class="track" id="track">
+
+<!-- ── p0 COVER ─────────────────────────────────────── -->
+<div class="page" id="p0">
+  <div class="sheet cover-sheet">
+    <div class="cv-eyebrow">Gentle Rapids' Most Trusted Source of Wholly Invented News</div>
+    <div class="cv-merri">Merriweather's</div>
+    <div class="cv-register">REGISTER</div>
+    <div class="cv-of">OF AGREEABLE OCCURRENCES</div>
+    <div class="cv-motto">&#9670;&nbsp; All the News That's Fit to Invent &nbsp;&#9670;</div>
+    <div class="cv-dateline">
+      <span>VOL. I, No. 1</span>
+      <span>GENTLE RAPIDS, OHIO — JUNE 10, 2026</span>
+      <span>TWO CENTS*</span>
+    </div>
+    <div class="cv-lead">MAN RETURNS LIBRARY BOOK 47 YEARS OVERDUE; TOWN RESPONDS WITH PARADE</div>
+    <p class="cv-deck">Fine of $861.35 Forgiven "On Account of Everyone Being So Pleased" — Marching Band Reports Having the Time of Their Lives</p>
+    <div class="rule-orn"><i></i></div>
+    <div class="cv-teaser">
+      <div class="t1">COUNCIL MEETING ENDS IN <span class="edit"><s>CHAOS</s><span class="fix">confetti!</span></span></div>
+      <div class="t2">Vote Was 7&ndash;0, With One Councilman Resting Productively</div>
+    </div>
+    <div class="cv-teaser">
+      <div class="t1">WHICH DUCK IS FRIENDLIEST?</div>
+      <div class="t2">Our Six-Month Investigation Finally Concludes &middot; B. Quill, Esq.</div>
+    </div>
+    <div class="cv-teaser">
+      <div class="t1">THIS DAY IN HISTORY</div>
+      <div class="t2">66 Million Years of Good News, Fully Footnoted &middot; Prof. Bunkle</div>
+    </div>
+    <div class="cv-teaser">
+      <div class="t2">INSIDE: The Weekly Pelican Fact (Page 6, As Negotiated) &middot; Stupid Poems &middot; Sound Counsel<br>PERSONALS: Weird? Lonely? Own Dice? See the Back Pages</div>
+    </div>
+    <div class="stamp">EDITED FOR HAPPINESS — D.P.</div>
+    <div class="cv-foot">*Negotiable. This newspaper contains no facts whatsoever. You're welcome. — The Management</div>
+  </div>
+</div>
+
+<!-- ── p1 FROM THE EDITOR'S DESK ────────────────────── -->
+<div class="page" id="p1">
+  <div class="sheet">
+    <div class="kicker">From the Editor's Desk</div>
+    <h2 class="head">A Word Before We Begin</h2>
+    <div class="rule-orn"><i></i></div>
+    <div class="body-copy">
+      <p>Dear Reader,</p>
+      <p>Welcome to the first issue of the <em>Register</em>, a project Mr. Merriweather describes as "the culmination of a lifelong dream" and which I describe as <span class="edit"><s>an ongoing situation</s><span class="fix">a delight</span></span>.</p>
+      <p>You will notice that everything in this newspaper is invented. This is by design. I taught fourth grade for thirty-one years, and if there is one thing I learned, it is that the truth is frequently <span class="edit"><s>a disappointment</s><span class="fix">optional on weekends</span></span>. Other newspapers print things that happened. We feel that things which happened have had quite enough attention.</p>
+      <p>Our promise to you is simple. Every story in these pages is false, and every story ends well. Nobody in the <em>Register</em> is ever truly harmed, embarrassed beyond recovery, or left out of dessert. If you should find an unhappy sentence, it is a typographical error, and I will deal with it <span class="edit"><s>severely</s><span class="fix">gently</span></span>.</p>
+      <p>I would also like to address the rumor that I edit my reporters' copy to make it happier. This is not a rumor. It is policy.</p>
+      <p>Onward, gently,</p>
+      <p class="dp-sig">— D.P.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── p2 MASTHEAD ──────────────────────────────────── -->
+<div class="page" id="p2">
+  <div class="sheet">
+    <div class="kicker">The Masthead</div>
+    <h2 class="head">Your Newsroom</h2>
+    <div class="rule-orn"><i></i></div>
+    <ul class="staff">
+      <li><span class="who">Doris Plunkett</span> &middot; <span class="what">Editor-in-Chief</span><br>Took the job temporarily in 1987. Edits all copy toward joy. Forbids blame.</li>
+      <li><span class="who">Cornelius B. Merriweather III</span> &middot; <span class="what">Publisher Emeritus</span><br>Owns the magazine, possibly. Has been here since 1987, or so he claims; no records exist, including of Cornelius.</li>
+      <li><span class="who">Bartholomew "Barty" Quill, Esq.</span> &middot; <span class="what">Senior Investigative Correspondent</span><br>Pulitzer finalist (0 times). The Esq. is self-awarded and legally untested.</li>
+      <li><span class="who">Prof. Thaddeus Bunkle</span> &middot; <span class="what">Staff Historian</span><br>Holds a framed certificate from an institution no one can locate on any map.</li>
+      <li><span class="who">Mildred Vance</span> &middot; <span class="what">Classifieds &amp; Personals</span><br>Has personally matched, by her own count, dozens of couples.</li>
+      <li><span class="who">Eugene Tippet</span> &middot; <span class="what">Staff Poet</span><br>Submits poems whether or not poetry was requested. All are published. We do not discuss the supply closet.</li>
+      <li><span class="who">The Intern</span> &middot; <span class="what">Everything Difficult</span><br>Layout by the intern. Thank you, the intern.</li>
+    </ul>
+    <p class="fine-center">The Register is published weekly-ish from the second floor of the Gentle Rapids Grange Hall, above the bees. Our rivalry with <em>The Plain Dealer of Facts</em>, which insists on printing things that happened, is conducted with the utmost courtesy.</p>
+  </div>
+</div>
+
+<!-- ── p3 CONTENTS ──────────────────────────────────── -->
+<div class="page" id="p3">
+  <div class="sheet">
+    <div class="kicker">In This Issue</div>
+    <h2 class="head">Contents</h2>
+    <div class="rule-orn"><i></i></div>
+    <ul class="toc">
+      <li><span class="sec">Library Book Returned; Parade Held</span><span class="dots"></span><span class="pg">5</span></li>
+      <li><span class="sec">Council Meeting Ends in <span class="edit"><s>Chaos</s><span class="fix">Confetti</span></span></span><span class="dots"></span><span class="pg">6</span></li>
+      <li><span class="sec">The Weekly Pelican Fact</span> <span class="by">as negotiated</span><span class="dots"></span><span class="pg">6&frac12;</span></li>
+      <li><span class="sec">Memo From the Publisher Emeritus</span> <span class="by">printed verbatim</span><span class="dots"></span><span class="pg">8</span></li>
+      <li><span class="sec">Which Duck Is Friendliest?</span> <span class="by">B. Quill, Esq.</span><span class="dots"></span><span class="pg">9</span></li>
+      <li><span class="sec">This Day in History</span> <span class="by">Prof. Bunkle</span><span class="dots"></span><span class="pg">10</span></li>
+      <li><span class="sec">The Poetry Corner</span> <span class="by">E. Tippet</span><span class="dots"></span><span class="pg">11</span></li>
+      <li><span class="sec">Sound Counsel</span> <span class="by">this week: Mr. Merriweather</span><span class="dots"></span><span class="pg">12</span></li>
+      <li><span class="sec">Letters to the Editor</span><span class="dots"></span><span class="pg">13</span></li>
+      <li><span class="sec">Departures &amp; Corrections</span><span class="dots"></span><span class="pg">14</span></li>
+      <li><span class="sec">Advertisements of Distinction</span><span class="dots"></span><span class="pg">15</span></li>
+      <li><span class="sec">Classifieds</span><span class="dots"></span><span class="pg">16</span></li>
+      <li><span class="sec">The Personals</span> <span class="by">curated by M. Vance</span><span class="dots"></span><span class="pg">17</span></li>
+    </ul>
+    <p class="fine-center">Page numbers approximate. The intern did the layout. Thank you, the intern.</p>
+  </div>
+</div>
+
+<!-- ── p4 LEAD STORY ────────────────────────────────── -->
+<div class="page" id="p4">
+  <div class="sheet">
+    <div class="kicker">Front Page &middot; Civic Triumph</div>
+    <h2 class="head">MAN RETURNS LIBRARY BOOK 47 YEARS OVERDUE; TOWN RESPONDS WITH PARADE</h2>
+    <p class="deck">Fine of $861.35 forgiven "on account of everyone being so pleased" — book found to be in excellent condition, clearly never opened</p>
+    <p class="byline">By the News Desk &middot; <span>Gentle Rapids</span></p>
+    <div class="body-copy">
+      <p><span class="dateline">GENTLE RAPIDS —</span> Eustace Crabwell, 74, walked into the Gentle Rapids Public Library at 9:14 Tuesday morning, set a book on the counter, and said, "I believe this is late." It was <em>How to Manage Your Time</em>, due back April 12, 1979.</p>
+      <p>By 9:54 there was a parade.</p>
+      <p>"We have a procedure for this," said head librarian Opal Hutchins, who has held the post since the book was new. "The procedure is forty-seven years old and nobody remembered it, so we went with our hearts." The accumulated fine of $861.35 was forgiven on the spot, Hutchins said, "on account of everyone being so pleased," and because the library's fine jar has been used to hold buttons since 1991.</p>
+      <p>Word traveled at the usual Gentle Rapids speed — instantly, via Mildred Vance — and the Gentle Rapids Consolidated Marching Band, which practices three times a week against exactly this sort of emergency, was assembled and in formation on Main Street within forty minutes. "We have been ready for years," said band director Felix Mott, visibly moved, holding a tuba that has waited its whole life. "Years."</p>
+      <p>The crowd along the route grew steadily <span class="edit"><s>restless</s><span class="fix">festive</span></span> as Mr. Crabwell was drawn past the cannery in the library's book cart, waving the returned volume above his head like a championship belt.</p>
+      <p>Asked what took him so long, Mr. Crabwell was philosophical. "I kept meaning to get around to it," he said. "Then one day I read the title, and I realized the whole problem was circular."</p>
+      <p>The book itself was examined by library staff and pronounced to be in excellent condition — "pristine," said Hutchins. "Clearly never opened. Honestly, that's how we like them back."</p>
+      <p>Mayor Birdie Loomis, reached at the parade, which she was leading, declared Tuesday to be Eustace Crabwell Day, effective every Tuesday. Mr. Crabwell has reportedly checked out a second book, <em>Following Through: A Beginner's Guide</em>, due July 8. The marching band has already begun rehearsing.</p>
+    </div>
+    <div class="pull">"I kept meaning to get around to it. Then I read the title, and I realized the whole problem was circular."<small>— Eustace Crabwell, Honoree</small></div>
+    <div class="note-box">
+      <div class="nb-title">By the Numbers</div>
+      <ul>
+        <li><b>47</b> — years overdue</li>
+        <li><b>$861.35</b> — fine, forgiven, jar full of buttons anyway</li>
+        <li><b>40</b> — minutes from return to parade</li>
+        <li><b>1</b> — tuba, fulfilled at last</li>
+        <li><b>0</b> — pages read ("that's how we like them back")</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ── p5 COUNCIL STORY ─────────────────────────────── -->
+<div class="page" id="p5">
+  <div class="sheet">
+    <div class="kicker">Civic Affairs</div>
+    <h2 class="head">COUNCIL MEETING ENDS IN <span class="edit"><s>CHAOS</s><span class="fix">confetti!</span></span></h2>
+    <p class="deck">River certified "sufficiently gentle" for 40th consecutive year — public comment lasts nine minutes, all of it compliments</p>
+    <p class="byline">By the News Desk &middot; <span>Town Hall</span></p>
+    <div class="body-copy">
+      <p><span class="dateline">TOWN HALL —</span> The Gentle Rapids Town Council convened Thursday for its annual certification of the Mild River, voting 7&ndash;0 that the river "remains sufficiently gentle," with Councilman Orville Tubb abstaining on the grounds of being asleep. Council President Verna Dale described Mr. Tubb as "resting productively" and directed that his snore be entered into the minutes as "general assent."</p>
+      <p>The public comment period lasted nine minutes and consisted entirely of compliments, including two directed at the river, three at the council, and one at the chairs, which are new.</p>
+      <p>Upon passage of the measure, the Parks Department deployed confetti from the balcony, as it does at the conclusion of all municipal business. The department has maintained a dedicated confetti budget since a clerical error in 1994 that no one will fix because it is nice. "We tried to fix it once," said Parks Director Lyle Greb, lowering his voice. "There was an outcry. There was almost <span class="edit"><s>a riot</s><span class="fix">a parade</span></span>."</p>
+      <p>"The river has never once let us down," President Dale told the <em>Register</em> afterward, brushing confetti from her shoulders, where it will remain until next year's vote, per tradition. "It just keeps going by. That's all we ask of anything around here, and the river understands that."</p>
+      <p>The council's next session will consider whether the footbridge behind the cannery is "still charming." Early polling suggests yes.</p>
+    </div>
+    <div class="ad small">
+      <div class="ad-head">MILD RIVER BOTTLED WATER</div>
+      <div class="ad-sub">Now 4% Wetter.</div>
+      <div class="ad-points">From the river. Gently. &middot; Certified sufficiently gentle, 40 years running &middot; Tastes like going by</div>
+      <div class="ad-fine">Mild River Bottling Co. is just Lyle with a funnel, and we think that's wonderful.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── p6 PAGE SIX: PELICAN FACT + JOKE DESK ────────── -->
+<div class="page" id="p6">
+  <div class="sheet">
+    <div class="kicker">Page Six &middot; As Negotiated</div>
+    <h2 class="head">The Weekly Pelican Fact</h2>
+    <div class="rule-orn"><i></i></div>
+    <div class="pull">PELICAN FACT No. 1: A pelican's pouch can hold three gallons of water or one regulation bowling ball — but a pelican will accept a bowling ball only from a friend.<small>The Pelican Desk (Settlement of 2026)</small></div>
+    <p class="fine-center">Editor's note: Mr. Merriweather has verified this fact personally. We have not asked how. — D.P.</p>
+    <div class="dbl"></div>
+    <div class="kicker">From the Joke Desk</div>
+    <div class="body-copy">
+      <p><b>Q:</b> What do you call a fish with no eyes?<br><b>A:</b> In Gentle Rapids, we call him Gary, and we help him find things.</p>
+      <p><b>Knock knock.</b> Who's there? <b>The Register.</b> The Register who? <b>Exactly. None of this is real.</b></p>
+      <p>A horse walks into the Gentle Rapids Caf&eacute;. The barista says, "Why the long face?" The horse says, "Genetics." They are now friends and meet every Thursday.</p>
+    </div>
+    <p class="fine-center">The Joke Desk is a literal desk. It came with the jokes in it. We are afraid to look deeper.</p>
+    <div class="ad small">
+      <div class="ad-head">PLUNKETT'S CASSEROLE INSURANCE</div>
+      <div class="ad-sub">Because some things should be covered. In cheese.</div>
+      <div class="ad-fine">No relation to the editor. — D.P. &nbsp; Some relation. — D.P.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── p7 MEMO ──────────────────────────────────────── -->
+<div class="page" id="p7">
+  <div class="sheet">
+    <div class="kicker">Printed Verbatim, As Always</div>
+    <h2 class="head">Memo From the Publisher Emeritus</h2>
+    <div class="rule-orn"><i></i></div>
+    <div class="memo-head">
+      MEMORANDUM<br>
+      TO: All staff, the building, posterity<br>
+      FROM: Cornelius B. Merriweather III<br>
+      RE: Triumph
+    </div>
+    <div class="typed">
+      <p>—and that, dear colleagues, is why I no longer trust pelicans, but ADORE them.</p>
+      <p>ITEM THE FIRST: I have reviewed our inaugural issue and found it superb. I have not read it. One does not need to read a thing to believe in it. This is called Publishing.</p>
+      <p>ITEM THE SECOND: Doris informs me that my forty-page pelican supplement has been "condensed" to one fact per issue, "for reasons of space, money, and the law." I accept these terms as all great men accept terms: graciously, and without understanding them.</p>
+      <p>ITEM THE THIRD: I am told there is a duck on page nine. I am assured it is friendly. See that it stays that way.</p>
+      <p>A toast, then, to Reginald Foxworth-Plume — the finest man I ever knew, who taught me everything I know, and who, records increasingly suggest, never existed. To Reginald!</p>
+      <p>Yours in perpetuity,<br>C.B.M. III</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── p8 BARTY'S EXPOSÉ ────────────────────────────── -->
+<div class="page" id="p8">
+  <div class="sheet">
+    <div class="kicker">The Investigative Desk</div>
+    <h2 class="head">WHICH DUCK IS FRIENDLIEST?</h2>
+    <p class="deck">A six-month investigation concludes at the boat ramp</p>
+    <p class="byline">By Bartholomew Quill, Esq. &middot; <span>Pulitzer Finalist, 0 Times</span></p>
+    <div class="typed">
+      <div class="typed-label">THE QUESTION</div>
+      <p>For too long, the citizens of Gentle Rapids have fed the ducks of the Mild River indiscriminately, scattering bread without data. This reporter — who covered municipal water rights for three decades and was a finalist for absolutely nothing in 1994 — resolved to bring rigor to the pond.</p>
+      <div class="typed-label">THE METHOD</div>
+      <p>Six months. Two hundred and eleven site visits. One log, kept in shorthand, in the rain. This reporter sat on the bench by the boat ramp until the bench and this reporter reached an understanding.</p>
+      <div class="typed-label">THE SOURCES</div>
+      <p>Four sources agreed to cooperate: a source close to the duck; a mallard who spoke on condition of anonymity; a duck who asked to be identified only as "a swan," a request this newspaper honors with reservations; and a waterfowl official who confirmed, off the record, that "they're all pretty friendly, Barty, it's Gentle Rapids."</p>
+      <div class="typed-label">THE WHISTLEBLOWER</div>
+      <p>In month four, a goose came forward. Granted anonymity, the goose honked without interruption for forty minutes. This reporter has the tapes. This reporter has listened to the tapes many times. The goose's courage will not be forgotten, whatever it was.</p>
+      <div class="typed-label">THE FINDING</div>
+      <p>It is Reginald. The duck by the boat ramp. It was always Reginald. He waits at the second piling; he greets arrivals and departures with equal warmth; he once escorted a lost casserole lid the length of the dock. When reached for comment, Reginald accepted a piece of bread — which, this reporter notes, is exactly what a friendly duck would do.</p>
+    </div>
+    <div class="pull">"They're all pretty friendly, Barty. It's Gentle Rapids."<small>— A Waterfowl Official, Off the Record</small></div>
+    <p class="fine-center">The Pulitzer committee has been notified. Repeatedly. — B.Q.</p>
+  </div>
+</div>
+
+<!-- ── p9 THIS DAY IN HISTORY ───────────────────────── -->
+<div class="page" id="p9">
+  <div class="sheet">
+    <div class="kicker">The Historical Record, Improved</div>
+    <h2 class="head">This Day in History</h2>
+    <p class="byline">Compiled by Prof. Thaddeus Bunkle &middot; <span>Holder of a Framed Certificate</span></p>
+    <ul class="hist">
+      <li><span class="yr">66,000,000 B.C.</span> Gerald the triceratops refuses, on principle, to look up.<sup>1</sup> Mood in the herd described by contemporaries as "unbothered; leafy."</li>
+      <li><span class="yr">A.D. 1462</span> Outside what is now Belgium, the longest handshake on record begins; both parties are too polite to stop. It lasts four hours and produces two lifelong friends and one treaty nobody needed.<sup>2</sup></li>
+      <li><span class="yr">1593</span> The village of Lower Pemberton successfully teaches a cow to nod. The cow's opinions, long suspected, are at last confirmed.<sup>3</sup></li>
+      <li><span class="yr">1849</span> Gold is discovered in Gentle Rapids. The town returns it. "It wasn't ours," explains a founding Tubb.<sup>4</sup></li>
+      <li><span class="yr">1907</span> Wilbur Fenwick of Gentle Rapids invents the second pancake, having grown tired of stopping.<sup>5</sup></li>
+      <li><span class="yr">1969</span> Gentle Rapids holds a full rehearsal of the moon landing in Hutchins' east field. It goes beautifully. The moon, in the end, is not needed.<sup>6</sup></li>
+    </ul>
+    <div class="footnotes">
+      1. See footnote 3.&nbsp;&nbsp;
+      2. Source: a very long letter.&nbsp;&nbsp;
+      3. See footnote 1.&nbsp;&nbsp;
+      4. The earth accepted the gold back without comment.&nbsp;&nbsp;
+      5. The first pancake was invented by appetite; the second, by momentum.&nbsp;&nbsp;
+      6. The field is still there, should the moon ever change its mind.
+    </div>
+  </div>
+</div>
+
+<!-- ── p10 POETRY CORNER ────────────────────────────── -->
+<div class="page" id="p10">
+  <div class="sheet">
+    <div class="kicker">The Poetry Corner</div>
+    <h2 class="head">Ode to the Mild River</h2>
+    <p class="byline">By Eugene Tippet &middot; <span>Staff Poet</span></p>
+    <div class="poem">
+      O river running through our town,<br>
+      You rarely make a person drown.<br>
+      Your rapids, gentle as a hug,<br>
+      Have never once disturbed a bug.<br><br>
+      The fish within you, calm and fat,<br>
+      Have no complaints, and that is that.<br>
+      Some rivers roar; some rivers rage;<br>
+      You simply turn another page.<br><br>
+      O Mild, you ask for no applause —<br>
+      You just keep flowing, just because.<br>
+      And should one day you cease to flow,<br>
+      We'll push you gently. Off you go.
+    </div>
+    <div class="rule-orn"><i></i></div>
+    <p class="fine-center poem-note">Eugene has been told this is wonderful. — D.P.<br>Eugene has three more. We are saving them. — D.P.</p>
+  </div>
+</div>
+
+<!-- ── p11 SOUND COUNSEL ────────────────────────────── -->
+<div class="page" id="p11">
+  <div class="sheet">
+    <div class="kicker">Sound Counsel</div>
+    <h2 class="head">Advice, Confidently Given</h2>
+    <p class="byline">This Week's Counselor: <span>Cornelius B. Merriweather III</span></p>
+    <div class="letter">
+      <p class="q"><b>Dear Register:</b> My neighbor's tree drops its leaves in my yard every autumn. How do I raise this with him politely? — <i>Raked, on Birch Street</i></p>
+      <p class="a">You do not raise it. You rake the leaves, select the finest one, press it in a heavy book, and present it to your neighbor each November as tribute. In time, the tree will choose between you. Trees always do. — C.B.M. III</p>
+    </div>
+    <div class="letter">
+      <p class="q"><b>Dear Register:</b> How long should a soup be simmered? — <i>Hungry, by the Cannery</i></p>
+      <p class="a">Until the household has forgiven whatever required soup. In my experience, four to six toasts. — C.B.M. III</p>
+    </div>
+    <div class="letter">
+      <p class="q"><b>Dear Register:</b> I am in love with my chess partner, but I fear that saying so will ruin the game. What should I do? — <i>Pining, in Check</i></p>
+      <p class="a">Resign immediately. A person who will not lose a game for love has no business winning one. Also: castle early. This is unrelated, but it is important. — C.B.M. III</p>
+    </div>
+    <p class="fine-center">Sound Counsel rotates among the staff. Next week: Mildred Vance, on everything.</p>
+  </div>
+</div>
+
+<!-- ── p12 LETTERS ──────────────────────────────────── -->
+<div class="page" id="p12">
+  <div class="sheet">
+    <div class="kicker">Correspondence</div>
+    <h2 class="head">Letters to the Editor</h2>
+    <p class="deck">Regarding articles from issues that do not exist</p>
+    <div class="letter">
+      <p class="q"><b>Sirs:</b> Your article "Twelve Bridges We Admire" (Issue No. 0) inexplicably omitted the footbridge behind the cannery. I have admired it for years and I demand a recount. — <i>Harold Knapp</i></p>
+      <p class="a">Dear Harold: You are entirely right, and to make up the difference, the staff has admired the footbridge twice this week. It was charming both times. — D.P.</p>
+    </div>
+    <div class="letter">
+      <p class="q"><b>To the Editor:</b> I was alarmed by your recent exposé on the disappearance of the gazebo. I have since walked past the gazebo. It is there. Kindly print a retraction. — <i>Mrs. Ida Frey</i></p>
+      <p class="a">Dear Ida: We are delighted to confirm the gazebo's continued presence, and we hereby retract its disappearance — which we never reported — with great pleasure. The system works. — D.P.</p>
+    </div>
+    <div class="letter">
+      <p class="q"><b>Editor:</b> Issue No. 0's recipe for "Wedding Soup for One" made me cry. — <i>Anonymous</i></p>
+      <p class="a">Dear Anonymous: So did we, and we never printed it. Your letter has been forwarded to Mildred Vance, who asks that you please see the Personals, and that you bring an appetite. — D.P.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── p13 OBITUARY + CORRECTIONS ───────────────────── -->
+<div class="page" id="p13">
+  <div class="sheet">
+    <div class="kicker">Departures, Gently</div>
+    <h2 class="obit-name">HOWARD P. GLADLY</h2>
+    <p class="obit-dates">1931 — 2026</p>
+    <div class="body-copy">
+      <p>Howard P. Gladly, who for ninety-four years was extremely good at being here, has retired from being alive, effective gently, surrounded by friends, jam, and accordion music.</p>
+      <p>Born in Gentle Rapids in 1931, Howard held the town record for consecutive waves returned: all of them. He waved at neighbors, at strangers, at the 7:40 freight, and at the Mild River itself, which several witnesses insist waved back, in its way. For sixty years he kept the morning shift at the corner of Birch and Main, waving, and the corner has requested a moment of quiet, which in Gentle Rapids means everyone waves smaller for a week.</p>
+      <p>Howard is survived by everyone who ever met him, which Howard considered the entire point. Donations may be made in jam. Services were a potluck; Howard would have brought the rolls. Somebody else managed. It was fine, Howard.</p>
+    </div>
+    <div class="dbl"></div>
+    <div class="note-box">
+      <div class="nb-title">The Corrections Box</div>
+      <ul class="corrections">
+        <li>We regret stating that Mrs. Hubbard's pie won the county fair. It won the <b>state</b> fair. We regret nothing else.</li>
+        <li>Last week's issue did not exist. We apologize to readers who looked for it.</li>
+        <li>The <em>Register</em> misspelled the word "pelican" zero times this week. We remain vigilant.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ── p14 ADVERTISEMENTS ───────────────────────────── -->
+<div class="page" id="p14">
+  <div class="sheet">
+    <div class="kicker">Advertisements of Distinction</div>
+    <div class="ad">
+      <div class="ad-head">BARNABY'S INVISIBLE SOCKS</div>
+      <div class="ad-sub">"You'll Just Have to Trust Us."</div>
+      <div class="ad-points">
+        Guaranteed present at time of shipping &middot; One size fits, presumably, all<br>
+        Now available in three colors (disputed) &middot; As NOT seen anywhere!
+      </div>
+      <div class="ad-price">35&cent; A PAIR &mdash; 50&cent; IF YOU WANT TO BE SURE</div>
+      <div class="ad-fine">Barnaby's Hosiery Concern, est. eventually. Claims of sock visibility will be referred to Barnaby, who will be very hurt. No refunds; nothing to return.</div>
+    </div>
+    <div class="ad small">
+      <div class="ad-head">THE GENTLE RAPIDS BOARD GAME EMPORIUM</div>
+      <div class="ad-sub">Dice, Counters, and Companionship.</div>
+      <div class="ad-points">Open whenever Earl is up. Knock gently; Earl startles.</div>
+    </div>
+    <div class="ad small">
+      <div class="ad-head">HAUNTED LADDER</div>
+      <div class="ad-sub">Priced to move. (It moves.)</div>
+      <div class="ad-points">See Classifieds, next page.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── p15 CLASSIFIEDS ──────────────────────────────── -->
+<div class="page" id="p15">
+  <div class="sheet">
+    <div class="kicker">The Back Pages</div>
+    <h2 class="head">Classifieds</h2>
+    <div class="cl-section">FOR SALE</div>
+    <ul class="cl">
+      <li><b>LADDER, slightly haunted.</b> Climbs itself at night, but only halfway. We respect that. $4, or trade for a calmer ladder. Inquire rear of cannery.</li>
+      <li><b>ACCORDION,</b> played once, beautifully, at a recent retirement (see p. 14). Still warm. Free to a good lap.</li>
+      <li><b>FORTY (40) JARS,</b> formerly jam. Memories included at no charge.</li>
+    </ul>
+    <div class="cl-section">WANTED</div>
+    <ul class="cl">
+      <li><b>SOMEONE TO WAVE BACK.</b> Mornings, corner of Birch &amp; Main. Howard's old shift. Big shoes. Warm hands preferred.</li>
+      <li><b>YOUR EXTRA CONFETTI.</b> The Parks Department budget renews in July and we intend to be ready. — V. Dale, Council President</li>
+      <li><b>A SECOND OPINION</b> on my cow's recent nodding. She has started doing it at me. — Lower Pemberton descendant, Rural Route 2</li>
+    </ul>
+    <div class="cl-section">SERVICES</div>
+    <ul class="cl">
+      <li><b>TUBB &amp; TUBB,</b> the town's oldest firm. We no longer remember of what. Reasonable rates, gentle handshakes.</li>
+      <li><b>WILL READ YOUR LIBRARY BOOKS BEFORE THEY ARE DUE.</b> References: one, glowing, recent. — E. Crabwell</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── p16 PERSONALS ────────────────────────────────── -->
+<div class="page" id="p16">
+  <div class="sheet">
+    <div class="kicker">The Back Pages</div>
+    <h2 class="head">The Personals</h2>
+    <p class="deck">Curated by Mildred Vance, who has matched dozens of couples<br><span class="mv" style="display:inline-block">and they are VERY happy! — M.V.</span></p>
+    <ul class="pers">
+      <li><b>GENTLEMAN, 61,</b> owns 340 board games, has played 12. Seeks opponent, witness, or reason. Must tolerate gloating done badly.
+        <span class="mv">He cries when he wins! Lovely. — M.V.</span></li>
+      <li><b>LADY, 58,</b> communicates primarily through casseroles. Seeks listener with appetite. No quitters.
+        <span class="mv">Bring a fork and a heart. — M.V.</span></li>
+      <li><b>MAN, 44,</b> has memorized the ferry schedule. There is no ferry. Seeks woman with boat, or similar faith.
+        <span class="mv">The schedule is beautiful. I've seen it. — M.V.</span></li>
+      <li><b>WOMAN, 71,</b> semi-retired from mischief. Seeks accomplice for low-stakes intrigue: extra desserts, unsanctioned gardening, waving at trains. Apply in person, but be sneaky about it.
+        <span class="mv">I have applied. We'll see! — M.V.</span></li>
+      <li><b>PERSON, AGELESS,</b> recently taught a cow to nod. You may have read about me (p. 10). Seeking someone impressed.
+        <span class="mv">Verified!! The cow nods. — M.V.</span></li>
+      <li><b>EUGENE, 39,</b> poet. Seeks muse, or at minimum, audience. Rhymes guaranteed; meaning extra.
+        <span class="mv">This one seems nice! — M.V. (Eugene asked me to add that. He is standing right here.)</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── p17 BACK COVER ───────────────────────────────── -->
+<div class="page" id="p17">
+  <div class="sheet cover-sheet">
+    <div class="cv-merri">Merriweather's</div>
+    <div class="cv-register" style="font-size: clamp(2rem, 8vw, 3.6rem)">REGISTER</div>
+    <div class="cv-of">OF AGREEABLE OCCURRENCES</div>
+    <div class="sub-box">
+      <div class="ad-head">SUBSCRIBE TO THE REGISTER</div>
+      <div class="ad-sub">Two cents weekly, billed never.</div>
+      <div class="ad-points">Delivered by whoever is going your way.</div>
+    </div>
+    <div class="note-box" style="text-align:left">
+      <div class="nb-title">Newsroom Notes</div>
+      <ul>
+        <li>Mr. Merriweather's toast subject, Reginald Foxworth-Plume (p. 8), shares a name with the friendliest duck (p. 9). Mr. Merriweather says this proves something. Investigation pending. — B.Q.</li>
+      </ul>
+    </div>
+    <p class="next-tease"><b>NEXT ISSUE:</b> The footbridge behind the cannery, admired at last.<br>Also: Mildred Vance answers everything.</p>
+    <div class="stamp">ONWARD, GENTLY — D.P.</div>
+    <div class="cv-foot">A Bumbloo Books publication. Every story guaranteed false and pleasant.</div>
+  </div>
+</div>
+
+</div><!-- /track -->
+
+<div class="dot-row" id="dotRow"></div>
+
+<script>
+window.STORY_PAGES = 18;
+(function () {
+  'use strict';
+  var PAGES = window.STORY_PAGES, current = 0;
+  var track = document.getElementById('track');
+  var counter = document.getElementById('navCounter');
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var dots = [];
+
+  function update() {
+    track.style.transform = 'translateX(' + (-current * 100) + 'vw)';
+    counter.textContent = (current + 1) + ' / ' + PAGES;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === PAGES - 1;
+    dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+    try { history.replaceState(null, '', '#' + current); } catch (e) {}
+    var pg = document.getElementById('p' + current);
+    if (pg) pg.scrollTop = pg.scrollTop; // keep scroll where reader left it
+  }
+
+  window.goTo = function (n) { current = Math.max(0, Math.min(PAGES - 1, n)); update(); };
+  window.prev = function () { window.goTo(current - 1); };
+  window.next = function () { window.goTo(current + 1); };
+
+  var dotRow = document.getElementById('dotRow');
+  for (var i = 0; i < PAGES; i++) {
+    var d = document.createElement('button');
+    d.className = 'dot';
+    d.setAttribute('aria-label', 'Page ' + (i + 1));
+    d.addEventListener('click', (function (idx) { return function () { window.goTo(idx); }; })(i));
+    dotRow.appendChild(d);
+    dots.push(d);
+  }
+
+  var hash = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(hash) && hash >= 0 && hash < PAGES) current = hash;
+
+  var startX = null;
+  document.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? window.next() : window.prev(); }
+    startX = null;
+  }, { passive: true });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') window.next();
+    if (e.key === 'ArrowLeft') window.prev();
+  });
+
+  window.shareIssue = function () {
+    var url = location.origin + location.pathname;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        var btn = document.querySelector('.nav-share');
+        var orig = btn.textContent;
+        btn.textContent = 'COPIED!';
+        setTimeout(function () { btn.textContent = orig; }, 2000);
+      });
+    }
+  };
+
+  update();
+})();
+</script>
+</body>
+</html>
