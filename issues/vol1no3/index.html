@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bench Wobble Preserved by Unanimous Vote; Town Declares It "Load-Bearing to the Experience" — Merriweather's Register</title>
+  <meta name="description" content="Vol. I, No. 3 of Merriweather's Register of Agreeable Occurrences. All the news that's fit to invent.">
+  <meta property="og:title" content="Bench Wobble Preserved by Unanimous Vote; Town Declares It &quot;Load-Bearing to the Experience&quot; — Merriweather's Register">
+  <meta property="og:description" content="Vol. I, No. 3 · Wholly invented, entirely pleasant. Plus: Prof. Bunkle gives advice historically, and the bees file a report.">
+  <meta property="og:image" content="https://register.bumbloobooks.com/images/vol1no3-cover.png">
+  <meta property="og:image:width" content="1400">
+  <meta property="og:image:height" content="1978">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://register.bumbloobooks.com/issues/vol1no3/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Special+Elite&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:   #ece3cd;   /* desk surface */
+  --page:    #f9f3e3;   /* the sheet */
+  --ink:     #2b2419;
+  --faded:   #6b5f4b;
+  --red:     #9e2b25;   /* Doris's pencil */
+  --teal:    #2f6f6a;   /* the Mild River */
+  --gold:    #c8923a;
+  --ad-bg:   #f6ecd2;
+  --rule:    #2b2419;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Crimson Text', Georgia, serif;
+  overflow: hidden;
+}
+
+/* ── Nav ─────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--page);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 14px; height: 50px;
+  border-bottom: 3px double var(--ink);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 8px; }
+.nav-back {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink); text-decoration: none;
+  opacity: 0.75; transition: opacity 0.15s;
+}
+.nav-back:hover { opacity: 1; }
+.nav-title {
+  font-family: 'Playfair Display', serif; font-weight: 800;
+  font-size: 0.92rem; letter-spacing: 0.1em;
+}
+.nav-counter { font-size: 0.72rem; font-weight: 600; opacity: 0.55; }
+.nav-btn, .nav-share {
+  background: none; border: none; cursor: pointer; color: var(--ink);
+  font-size: 1.05rem; padding: 8px; opacity: 0.75; transition: opacity 0.15s;
+  font-family: inherit;
+}
+.nav-btn:hover, .nav-share:hover { opacity: 1; }
+.nav-btn:disabled { opacity: 0.2; cursor: default; }
+.nav-share { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; }
+
+/* ── Track & pages ───────────────────────────────────── */
+.track {
+  display: flex; height: 100%;
+  transition: transform 0.45s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) { .track { transition: none; } }
+.page {
+  flex: 0 0 100vw; height: 100%;
+  overflow-y: auto;
+  padding: 70px 14px 70px;
+}
+.sheet {
+  max-width: 740px; margin: 0 auto 28px;
+  background: var(--page);
+  border: 1px solid #d8cba8;
+  box-shadow: 0 2px 0 #d8cba8, 0 14px 34px rgba(60, 48, 24, 0.22);
+  padding: 40px 44px 52px;
+}
+@media (max-width: 560px) { .sheet { padding: 26px 20px 38px; } }
+
+/* ── Shared editorial bits ───────────────────────────── */
+.kicker {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; text-align: center; color: var(--red);
+  margin-bottom: 10px;
+}
+.head {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  text-align: center; line-height: 1.04; margin-bottom: 10px;
+  font-size: clamp(1.7rem, 5.2vw, 2.6rem);
+}
+.subhead {
+  font-family: 'Playfair Display', serif; font-weight: 700;
+  text-align: center; font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+  letter-spacing: 0.04em; margin-bottom: 12px;
+}
+.deck {
+  text-align: center; font-style: italic; font-size: 1.05rem;
+  color: var(--faded); margin: 0 auto 18px; max-width: 56ch;
+}
+.byline {
+  text-align: center; font-size: 0.84rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px;
+}
+.byline span { color: var(--teal); }
+.rule-orn {
+  display: flex; align-items: center; gap: 12px; margin: 18px 0;
+}
+.rule-orn::before, .rule-orn::after {
+  content: ""; flex: 1; border-top: 1px solid var(--ink);
+}
+.rule-orn i {
+  width: 9px; height: 9px; background: var(--ink);
+  transform: rotate(45deg); flex: 0 0 auto;
+}
+.dbl { border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); height: 7px; margin: 14px 0 18px; }
+
+.body-copy p { font-size: 1.06rem; line-height: 1.62; margin-bottom: 14px; }
+.body-copy p:first-of-type::first-letter {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  float: left; font-size: 3.3em; line-height: 0.82;
+  padding: 4px 8px 0 0;
+}
+.dateline { font-weight: 600; letter-spacing: 0.06em; }
+
+/* Doris's edits — the signature */
+.edit { position: relative; white-space: nowrap; }
+.edit s { text-decoration: none; position: relative; }
+.edit s::after {
+  content: ""; position: absolute; left: -2px; right: -2px; top: 55%;
+  border-top: 3px solid var(--red); transform: rotate(-2deg); opacity: 0.85;
+}
+.edit .fix {
+  font-family: 'Caveat', cursive; color: var(--red); font-weight: 700;
+  font-size: 1.15em; position: absolute; left: 50%; top: -0.95em;
+  transform: translateX(-50%) rotate(-3deg); white-space: nowrap;
+}
+.dp-sig { font-family: 'Caveat', cursive; font-size: 1.6rem; color: var(--red); }
+
+.pull {
+  border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
+  margin: 22px 10px; padding: 14px 8px;
+  font-family: 'Playfair Display', serif; font-weight: 700;
+  font-size: 1.25rem; line-height: 1.3; text-align: center;
+}
+.pull small { display: block; font-family: 'Crimson Text', serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; color: var(--faded); }
+
+.note-box {
+  border: 1px solid var(--ink); padding: 16px 18px; margin: 20px 0;
+  background: rgba(47, 111, 106, 0.06);
+}
+.note-box .nb-title {
+  font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 0.78rem; margin-bottom: 10px; text-align: center;
+}
+.note-box ul { list-style: none; }
+.note-box li { font-size: 0.98rem; line-height: 1.5; padding: 4px 0; border-bottom: 1px dotted #b9aa84; }
+.note-box li:last-child { border-bottom: none; }
+
+/* Ads */
+.ad {
+  background: var(--ad-bg); border: 2px solid var(--ink);
+  outline: 1px solid var(--ink); outline-offset: 3px;
+  padding: 22px 20px; margin: 26px 6px 10px; text-align: center;
+}
+.ad-head { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.3rem, 4vw, 1.9rem); letter-spacing: 0.02em; }
+.ad-sub { font-style: italic; font-size: 1.02rem; margin: 6px 0 12px; }
+.ad-points { font-size: 0.96rem; line-height: 1.7; }
+.ad-price { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.05rem; margin-top: 12px; letter-spacing: 0.04em; }
+.ad-fine { font-size: 0.72rem; color: var(--faded); margin-top: 10px; line-height: 1.45; }
+.ad.small { padding: 14px 16px; }
+.ad.small .ad-head { font-size: 1.15rem; }
+
+/* Cover page */
+.cover-sheet { text-align: center; padding-top: 30px; }
+.cv-eyebrow { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+.cv-merri { font-family: 'Caveat', cursive; font-weight: 700; color: var(--teal); font-size: clamp(2rem, 7vw, 3rem); margin-top: 14px; }
+.cv-register { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(2.9rem, 11.5vw, 5.4rem); letter-spacing: 0.06em; line-height: 1; }
+.cv-of { font-family: 'Playfair Display', serif; font-weight: 700; letter-spacing: 0.3em; font-size: clamp(0.8rem, 2.6vw, 1.25rem); margin-top: 6px; }
+.cv-motto { font-style: italic; margin: 12px 0; font-size: 1rem; }
+.cv-dateline {
+  display: flex; justify-content: space-between; gap: 8px;
+  border-top: 1px solid var(--ink); border-bottom: 4px solid var(--ink);
+  padding: 6px 2px 8px; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em;
+  margin: 10px 0 24px;
+}
+.cv-lead { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.7rem, 6.4vw, 3rem); line-height: 1.06; }
+.cv-deck { font-style: italic; color: var(--faded); margin: 14px auto 6px; max-width: 52ch; }
+.cv-teaser { margin-top: 18px; }
+.cv-teaser .t1 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: clamp(1.05rem, 3.4vw, 1.45rem); }
+.cv-teaser .t2 { font-size: 0.9rem; font-weight: 600; color: var(--faded); margin-top: 2px; }
+.cv-foot { font-size: 0.78rem; font-style: italic; color: var(--faded); border-top: 1px solid var(--ink); margin-top: 26px; padding-top: 10px; }
+.stamp {
+  display: inline-block; border: 3px solid var(--red); border-radius: 10px;
+  color: var(--red); font-family: 'Special Elite', monospace;
+  padding: 6px 14px; transform: rotate(-6deg); opacity: 0.85;
+  font-size: 0.85rem; margin-top: 18px;
+}
+
+/* Masthead page */
+.staff { list-style: none; margin-top: 8px; }
+.staff li { padding: 13px 4px; border-bottom: 1px dotted #b9aa84; font-size: 1.02rem; line-height: 1.55; }
+.staff li:last-child { border-bottom: none; }
+.staff .who { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.06rem; }
+.staff .what { font-weight: 600; color: var(--teal); font-size: 0.86rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Contents */
+.toc { list-style: none; margin-top: 6px; }
+.toc li {
+  display: flex; align-items: baseline; gap: 8px;
+  padding: 9px 2px; font-size: 1.05rem;
+}
+.toc .dots { flex: 1; border-bottom: 2px dotted #b9aa84; transform: translateY(-4px); }
+.toc .pg { font-weight: 600; }
+.toc .sec { font-family: 'Playfair Display', serif; font-weight: 700; }
+.toc .by { font-size: 0.85rem; color: var(--faded); font-style: italic; }
+
+/* Memo & typewriter pieces */
+.typed { font-family: 'Special Elite', monospace; }
+.typed p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 14px; }
+.memo-head { font-family: 'Special Elite', monospace; font-size: 0.92rem; line-height: 1.8; border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 18px; }
+.typed-label { font-family: 'Special Elite', monospace; font-weight: 400; letter-spacing: 0.1em; font-size: 0.95rem; color: var(--red); margin: 18px 0 6px; }
+
+/* History */
+.hist { list-style: none; }
+.hist li { padding: 13px 2px; border-bottom: 1px solid #d8cba8; font-size: 1.04rem; line-height: 1.58; }
+.hist .yr { font-family: 'Playfair Display', serif; font-weight: 900; color: var(--teal); margin-right: 8px; }
+.footnotes { font-size: 0.85rem; color: var(--faded); line-height: 1.7; margin-top: 16px; border-top: 1px solid var(--ink); padding-top: 10px; }
+
+/* Poem */
+.poem { text-align: center; font-size: 1.12rem; line-height: 1.9; font-style: italic; margin: 18px 0; }
+.poem-note { text-align: center; }
+
+/* Letters & counsel */
+.letter { margin-bottom: 22px; }
+.letter .q { font-size: 1.04rem; line-height: 1.6; }
+.letter .q::before { content: "✉ "; color: var(--teal); }
+.letter .a {
+  margin: 10px 0 0 22px; padding: 10px 14px; border-left: 3px solid var(--red);
+  font-size: 1.02rem; line-height: 1.6; background: rgba(158, 43, 37, 0.05);
+}
+
+/* Obit */
+.obit-name { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.5rem, 4.6vw, 2.1rem); text-align: center; }
+.obit-dates { text-align: center; font-weight: 600; letter-spacing: 0.2em; margin: 4px 0 16px; }
+
+/* Corrections */
+.corrections li { font-style: italic; }
+
+/* Classifieds */
+.cl-section { font-family: 'Special Elite', monospace; font-size: 1rem; letter-spacing: 0.18em; border-bottom: 2px solid var(--ink); margin: 22px 0 8px; padding-bottom: 4px; }
+.cl { list-style: none; }
+.cl li { font-family: 'Special Elite', monospace; font-size: 0.88rem; line-height: 1.65; padding: 9px 2px; border-bottom: 1px dotted #b9aa84; }
+.cl b { letter-spacing: 0.05em; }
+
+/* Personals */
+.pers { list-style: none; }
+.pers li { padding: 15px 2px; border-bottom: 1px solid #d8cba8; font-size: 1.02rem; line-height: 1.6; }
+.mv { font-family: 'Caveat', cursive; color: var(--teal); font-weight: 700; font-size: 1.25rem; display: block; margin-top: 4px; transform: rotate(-1deg); }
+
+/* Back page */
+.sub-box { border: 3px double var(--ink); text-align: center; padding: 22px 18px; margin: 20px 0; }
+.next-tease { text-align: center; font-style: italic; margin-top: 18px; }
+
+/* Dots pager */
+.dot-row {
+  position: fixed; bottom: 12px; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: center; gap: 7px; flex-wrap: wrap; padding: 0 12px;
+}
+.dot {
+  width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--ink);
+  background: var(--page); cursor: pointer; padding: 0; opacity: 0.6; transition: all 0.15s;
+}
+.dot:hover { opacity: 1; }
+.dot.active { background: var(--red); border-color: var(--red); opacity: 1; }
+.dot:focus-visible, .nav-btn:focus-visible, .nav-share:focus-visible, .nav-back:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+.fine-center { text-align: center; font-size: 0.85rem; color: var(--faded); font-style: italic; margin-top: 16px; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-back" href="../../index.html">&#8592; The Register</a>
+  </div>
+  <div class="nav-title">VOL. I, No. 3</div>
+  <div class="nav-right">
+    <button class="nav-share" onclick="shareIssue()" aria-label="Copy link">SHARE</button>
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-btn" id="btnPrev" onclick="prev()" aria-label="Previous page">&#8592;</button>
+    <button class="nav-btn" id="btnNext" onclick="next()" aria-label="Next page">&#8594;</button>
+  </div>
+</nav>
+
+<div class="track" id="track">
+
+<!-- ── p0 COVER ─────────────────────────────────────── -->
+<div class="page" id="p0">
+  <div class="sheet cover-sheet">
+    <div class="cv-eyebrow">Gentle Rapids' Most Trusted Source of Wholly Invented News</div>
+    <div class="cv-merri">Merriweather's</div>
+    <div class="cv-register">REGISTER</div>
+    <div class="cv-of">OF AGREEABLE OCCURRENCES</div>
+    <div class="cv-motto">&#9670;&nbsp; All the News That's Fit to Invent &nbsp;&#9670;</div>
+    <div class="cv-dateline">
+      <span>VOL. I, No. 3</span>
+      <span>GENTLE RAPIDS, OHIO — JUNE 24, 2026</span>
+      <span>TWO CENTS*</span>
+    </div>
+    <div class="cv-lead">TOWN VOTES TO KEEP THE WOBBLE; BENCH DECLARED "LOAD-BEARING TO THE EXPERIENCE"</div>
+    <p class="cv-deck">Council Rejects Repair 7&ndash;0 After Nine Residents Testify That They Like It — Carpenter Sent Home With Pie and Full Payment</p>
+    <div class="rule-orn"><i></i></div>
+    <div class="cv-teaser">
+      <div class="t1">BEES FILE FIRST <span class="edit"><s>COMPLAINT</s><span class="fix">report!</span></span></div>
+      <div class="t2">Downstairs Newspaper Receives Note; It Is Very Polite &middot; Page 6</div>
+    </div>
+    <div class="cv-teaser">
+      <div class="t1">BUNKLE ANSWERS HISTORICALLY</div>
+      <div class="t2">Sound Counsel This Week &middot; Every Problem Has Happened Before &middot; Page 12</div>
+    </div>
+    <div class="cv-teaser">
+      <div class="t1">THE GOOSE GRANTS AN INTERVIEW</div>
+      <div class="t2">Thirty-One Minutes, Transcribed at Last &middot; B. Quill, Esq., Page 9</div>
+    </div>
+    <div class="cv-teaser">
+      <div class="t2">INSIDE: Pelican Fact No. 3 (Page 6, As Negotiated) &middot; A Third Poem &middot; The Whistle Hums<br>PERSONALS: The Rowboat Keeps the Schedule &middot; See the Back Pages</div>
+    </div>
+    <div class="stamp">EDITED FOR HAPPINESS — D.P.</div>
+    <div class="cv-foot">*Negotiable. This newspaper contains no facts whatsoever. You're welcome. — The Management</div>
+  </div>
+</div>
+
+<!-- ── p1 FROM THE EDITOR'S DESK ────────────────────── -->
+<div class="page" id="p1">
+  <div class="sheet">
+    <div class="kicker">From the Editor's Desk</div>
+    <h2 class="head">On Leaving Well Enough Alone</h2>
+    <div class="rule-orn"><i></i></div>
+    <div class="body-copy">
+      <p>Dear Reader,</p>
+      <p>Three issues. I am told this constitutes a <span class="edit"><s>problem</s><span class="fix">tradition</span></span>.</p>
+      <p>This week the town was asked to fix something, and declined. You will read about the bench on page five. I confess I went down to the boat ramp myself before the vote, sat on the thing, and felt it tip gently to the left, the way a dog leans when it has decided you are staying. I understand the carpenter's position. I understand the council's better.</p>
+      <p>We have also, at long last, heard from the bees. They occupy the first floor of the Grange Hall and we occupy the second, and in thirty-nine years neither party has said a word to the other. That silence ended Tuesday. Their note is reproduced on page six, unedited, which I want on the record, because I <span class="edit"><s>desperately wanted</s><span class="fix">chose not</span></span> to improve it.</p>
+      <p>Professor Bunkle has taken the advice column and answered every question with a precedent from before 1800. I have checked none of them. Neither, I suspect, has he.</p>
+      <p>Everything herein remains false. Everything herein still ends well. The wobble stays.</p>
+      <p>Onward, gently,</p>
+      <p class="dp-sig">— D.P.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── p2 MASTHEAD ──────────────────────────────────── -->
+<div class="page" id="p2">
+  <div class="sheet">
+    <div class="kicker">The Masthead</div>
+    <h2 class="head">Your Newsroom</h2>
+    <div class="rule-orn"><i></i></div>
+    <ul class="staff">
+      <li><span class="who">Doris Plunkett</span> &middot; <span class="what">Editor-in-Chief</span><br>Thirty-nine years temporary. Sat on the bench before the vote and will not say how she'd have voted.</li>
+      <li><span class="who">Cornelius B. Merriweather III</span> &middot; <span class="what">Publisher Emeritus</span><br>Has begun addressing the duck as "sir." The duck has not objected.</li>
+      <li><span class="who">Bartholomew "Barty" Quill, Esq.</span> &middot; <span class="what">Senior Investigative Correspondent</span><br>Pulitzer finalist (0 times). Has transcribed the goose. It took eleven days.</li>
+      <li><span class="who">Prof. Thaddeus Bunkle</span> &middot; <span class="what">Staff Historian &amp; (This Week) Sound Counsel</span><br>Believes every difficulty has a precedent. Has never once been asked for the precedent.</li>
+      <li><span class="who">Mildred Vance</span> &middot; <span class="what">Classifieds &amp; Personals</span><br>Fresh from a triumphant week of advice. Has taken up the accordion, badly, joyfully.</li>
+      <li><span class="who">Eugene Tippet</span> &middot; <span class="what">Staff Poet</span><br>One poem left in reserve. We have told him nothing. He suspects everything.</li>
+      <li><span class="who">The Bees</span> &middot; <span class="what">Downstairs</span><br>New this week. Correspondence only. We are honored.</li>
+      <li><span class="who">The Intern</span> &middot; <span class="what">Everything Difficult</span><br>Delivered our reply to the bees. Returned unstung and glowing. Thank you, the intern.</li>
+    </ul>
+    <p class="fine-center">Published weekly-ish from the second floor of the Gentle Rapids Grange Hall, above &mdash; and now, formally, in correspondence with &mdash; the bees. <em>The Plain Dealer of Facts</em> reported this week that the bench wobbles. We congratulate them on a fact well handled.</p>
+  </div>
+</div>
+
+<!-- ── p3 CONTENTS ──────────────────────────────────── -->
+<div class="page" id="p3">
+  <div class="sheet">
+    <div class="kicker">In This Issue</div>
+    <h2 class="head">Contents</h2>
+    <div class="rule-orn"><i></i></div>
+    <ul class="toc">
+      <li><span class="sec">Town Votes to Keep the Wobble</span><span class="dots"></span><span class="pg">5</span></li>
+      <li><span class="sec">The Bees Write to Us</span> <span class="by">unedited</span><span class="dots"></span><span class="pg">6</span></li>
+      <li><span class="sec">The Weekly Pelican Fact</span> <span class="by">as negotiated</span><span class="dots"></span><span class="pg">6&frac12;</span></li>
+      <li><span class="sec">Memo From the Publisher Emeritus</span> <span class="by">printed verbatim</span><span class="dots"></span><span class="pg">8</span></li>
+      <li><span class="sec">The Goose, Transcribed</span> <span class="by">B. Quill, Esq.</span><span class="dots"></span><span class="pg">9</span></li>
+      <li><span class="sec">This Day in History</span> <span class="by">Prof. Bunkle</span><span class="dots"></span><span class="pg">10</span></li>
+      <li><span class="sec">The Poetry Corner</span> <span class="by">E. Tippet</span><span class="dots"></span><span class="pg">11</span></li>
+      <li><span class="sec">Sound Counsel</span> <span class="by">this week: Prof. Bunkle, historically</span><span class="dots"></span><span class="pg">12</span></li>
+      <li><span class="sec">Letters to the Editor</span><span class="dots"></span><span class="pg">13</span></li>
+      <li><span class="sec">Departures &amp; Corrections</span><span class="dots"></span><span class="pg">14</span></li>
+      <li><span class="sec">Advertisements of Distinction</span><span class="dots"></span><span class="pg">15</span></li>
+      <li><span class="sec">Classifieds</span><span class="dots"></span><span class="pg">16</span></li>
+      <li><span class="sec">The Personals</span> <span class="by">curated by M. Vance</span><span class="dots"></span><span class="pg">17</span></li>
+    </ul>
+    <p class="fine-center">Page numbers approximate. The intern did the layout between deliveries to the bees.</p>
+  </div>
+</div>
+
+<!-- ── p4 LEAD STORY: THE BENCH ─────────────────────── -->
+<div class="page" id="p4">
+  <div class="sheet">
+    <div class="kicker">Front Page &middot; Civic Triumph</div>
+    <h2 class="head">TOWN VOTES TO KEEP THE WOBBLE; BENCH DECLARED "LOAD-BEARING TO THE EXPERIENCE"</h2>
+    <p class="deck">Council rejects repair 7&ndash;0 after nine residents testify they have grown fond of it — carpenter sent home with full payment and a pie</p>
+    <p class="byline">By the News Desk &middot; <span>The Boat Ramp</span></p>
+    <div class="body-copy">
+      <p><span class="dateline">THE BOAT RAMP —</span> The bench by the boat ramp has wobbled since 1978. On Thursday, after ninety minutes of the most heartfelt testimony this newspaper has ever recorded, the Gentle Rapids Town Council voted 7&ndash;0 to leave it exactly as it is.</p>
+      <p>The matter reached the council by way of Harold Knapp, who raised it in these pages last issue and who arrived Thursday prepared to argue for repair. He did not get the chance. Nine residents spoke first, and all nine spoke in favor of the wobble.</p>
+      <p>"You sit down, it tips a little to the left, and then it stops," said Ida Frey, who has taken the same seat every Sunday for eleven years. "It's saying hello. A bench that doesn't move is just furniture outdoors."</p>
+      <p>One resident testified that she learned to think on that bench, and that the thinking "requires the tilt." Another said the wobble had witnessed his entire engagement and that fixing it now would be "a betrayal of a friend who was there." A third stated only that he had nothing to add and would like to associate himself with everything already said, which the council entered into the minutes as "seconded, warmly."</p>
+      <p>Mr. Knapp, who had come to demand action, rose at the end and withdrew his own petition. "I raised it because I thought nobody had noticed," he told the chamber. "But everybody noticed. Everybody has noticed for forty-eight years. They just liked it." He was applauded for a length of time the clerk recorded as <span class="edit"><s>excessive</s><span class="fix">just right</span></span>.</p>
+      <p>Council President Verna Dale called the question. The vote was unanimous, with Councilman Orville Tubb resting productively and his snore recorded, as ever, as general assent. The bench was formally designated Load-Bearing to the Experience, a category the town invented Thursday and intends to use again.</p>
+      <p>A carpenter had been hired in advance and arrived with a shim, a level, and the reasonable expectation of work. He was paid in full, thanked at length, and sent home with a pie. Reached on his porch, he described the outcome as "the strangest job I've ever been proud of."</p>
+      <p>Parks Director Lyle Greb deployed confetti, some of which settled on the bench. It has been left there. "It'll blow off when it's ready," said Mr. Greb.</p>
+    </div>
+    <div class="pull">"A bench that doesn't move is just furniture outdoors."<small>— Ida Frey, Sunday Occupant, Eleven Years</small></div>
+    <div class="note-box">
+      <div class="nb-title">The Wobble, In Brief</div>
+      <ul>
+        <li><b>1978</b> — year the wobble began; cause unknown, unexamined</li>
+        <li><b>7&ndash;0</b> — vote to preserve (1 abstention, asleep)</li>
+        <li><b>9</b> — residents testifying; all in favor of leaving it</li>
+        <li><b>1</b> — petition withdrawn by its own author, mid-meeting</li>
+        <li><b>1</b> — pie, awarded to a carpenter for work not performed</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ── p5 SECOND STORY: THE BEES ────────────────────── -->
+<div class="page" id="p5">
+  <div class="sheet">
+    <div class="kicker">Correspondence &middot; A First</div>
+    <h2 class="head">THE BEES WRITE TO US</h2>
+    <p class="deck">After thirty-nine years of shared premises, the Grange Hall's first-floor residents make contact — the note is brief, courteous, and about the piano</p>
+    <p class="byline">By the News Desk &middot; <span>The Grange Hall</span></p>
+    <div class="body-copy">
+      <p><span class="dateline">THE GRANGE HALL —</span> The <em>Register</em> has occupied the second floor of the Gentle Rapids Grange Hall since 1987. The bees have occupied the first floor since before anyone thought to write it down. In all that time, neither party had ever contacted the other. That changed Tuesday, when the intern found a note on the stairs.</p>
+      <p>The note was written on a torn piece of what appears to be a seed catalog, in a hand our staff describes as "small but confident." It reads, in full:</p>
+      <p><em>"The piano is lovely. Thursdays are best. We are not complaining. We are simply available. — Downstairs"</em></p>
+      <p>There is no piano in the Grange Hall. There has not been a piano in the Grange Hall since 1961, when it was moved to the school and then, records suggest, to a barn. The staff has spent two days establishing this and has grown steadily less interested in resolving it.</p>
+      <p>"They said it's lovely," said Mildred Vance, who has read the note eleven times. "You don't argue with that. You just play more on Thursdays."</p>
+      <p>Editor Doris Plunkett elected to print the note unedited, a decision she described as "difficult" and "correct." A reply was drafted, revised four times, and reduced to a single line: <em>"Thursdays, then. Thank you for the years of quiet. — Upstairs."</em> The intern carried it down and returned unstung, reporting the delivery went "very well, I think."</p>
+      <p>The bees have not written again. The staff checks the stairs each morning, casually, on the way past.</p>
+    </div>
+    <div class="ad small">
+      <div class="ad-head">THE GENTLE RAPIDS GRANGE HALL</div>
+      <div class="ad-sub">Two Floors. Two Tenants. One Understanding.</div>
+      <div class="ad-points">Available for meetings, potlucks, and quiet coexistence &middot; Piano: none, allegedly &middot; Thursdays reserved</div>
+      <div class="ad-fine">Please use the outside stair. Downstairs is spoken for.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── p6 PAGE SIX: PELICAN FACT + JOKE DESK ────────── -->
+<div class="page" id="p6">
+  <div class="sheet">
+    <div class="kicker">Page Six &middot; As Negotiated</div>
+    <h2 class="head">The Weekly Pelican Fact</h2>
+    <div class="rule-orn"><i></i></div>
+    <div class="pull">PELICAN FACT No. 3: A pelican cannot be hurried. It has never been hurried. In the entire recorded history of the pelican, no pelican has once been late, because the pelican simply redefines the hour upon arrival.<small>The Pelican Desk (Settlement of 2026, Clause 3)</small></div>
+    <p class="fine-center">Editor's note: Mr. Merriweather has asked whether this principle may be applied to our deadlines. It may not. — D.P.</p>
+    <div class="dbl"></div>
+    <div class="kicker">From the Joke Desk</div>
+    <div class="body-copy">
+      <p><b>Q:</b> How many Gentle Rapids residents does it take to fix a wobbly bench?<br><b>A:</b> Nine, to explain why you shouldn't.</p>
+      <p><b>Knock knock.</b> Who's there? <b>Downstairs.</b> Downstairs who? <b>Downstairs would like you to know the piano is lovely and Thursdays are best.</b></p>
+      <p>A carpenter walks into the Gentle Rapids Café holding a pie he did not earn. Everyone applauds. He sits down. The chair does not wobble, and he finds he misses it.</p>
+    </div>
+    <p class="fine-center">The Joke Desk remains a literal desk. This week it contained a jar of honey. We have questions and no intention of asking them.</p>
+    <div class="ad small">
+      <div class="ad-head">PLUNKETT'S CASSEROLE INSURANCE</div>
+      <div class="ad-sub">Now Covering Pie. Effective Immediately. Ask a Carpenter.</div>
+      <div class="ad-fine">No relation to the editor. — D.P. &nbsp; Some relation. — D.P.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── p7 MEMO ──────────────────────────────────────── -->
+<div class="page" id="p7">
+  <div class="sheet">
+    <div class="kicker">Printed Verbatim, As Always</div>
+    <h2 class="head">Memo From the Publisher Emeritus</h2>
+    <div class="rule-orn"><i></i></div>
+    <div class="memo-head">
+      MEMORANDUM<br>
+      TO: All staff, the bees, Sir<br>
+      FROM: Cornelius B. Merriweather III<br>
+      RE: Correspondence &amp; Standing
+    </div>
+    <div class="typed">
+      <p>—which is why I have never trusted a doorway, and I stand by it.</p>
+      <p>ITEM THE FIRST: The bees have written to us. THE BEES HAVE WRITTEN TO US. In thirty-nine years I have received four hundred letters and not one of them was from a colony. I have had the note framed. Doris has had it unframed, photographed, and returned to the file. We have compromised: it is framed in my mind.</p>
+      <p>ITEM THE SECOND: They mention a piano. I have never played the piano. I have, however, hummed near a piano, and I did so most recently on a Thursday. I make no claims. I simply place the facts side by side and allow them to become friends.</p>
+      <p>ITEM THE THIRD: I have begun addressing the duck as "sir." This followed a morning at the boat ramp during which the duck looked at me with such patience that I felt, briefly, sixteen years old and in trouble. Only one man ever looked at me that way. I say nothing further.</p>
+      <p>ITEM THE FOURTH: Doris informs me the bench will not be repaired. Excellent. A thing that wobbles is a thing that is still deciding, and I have never rushed anyone who was still deciding, except Reginald, once, at a train station, and I have thought about it every day since.</p>
+      <p>A toast — to the bees, to Sir, and to Thursdays.</p>
+      <p>Yours in correspondence,<br>C.B.M. III</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── p8 BARTY: THE GOOSE TRANSCRIPT ───────────────── -->
+<div class="page" id="p8">
+  <div class="sheet">
+    <div class="kicker">The Investigative Desk</div>
+    <h2 class="head">THE GOOSE, TRANSCRIBED</h2>
+    <p class="deck">Eleven days of labor. Thirty-one minutes of honking. This reporter presents the record and lets the reader judge.</p>
+    <p class="byline">By Bartholomew Quill, Esq. &middot; <span>Pulitzer Finalist, 0 Times</span></p>
+    <div class="typed">
+      <div class="typed-label">THE UNDERTAKING</div>
+      <p>This reporter has been in possession of the goose tapes since the duck investigation of Vol. I, No. 1. This reporter has referred to them repeatedly and transcribed them never. A colleague observed that a source one will not transcribe is a source one is hiding behind. This reporter did not care for that remark and began work the same afternoon.</p>
+      <div class="typed-label">THE METHOD</div>
+      <p>Eleven days. A borrowed machine. Headphones belonging to the intern, returned. This reporter played the tape at half speed, then quarter speed, then at full speed with eyes closed, which is how one is supposed to listen to anyone.</p>
+      <div class="typed-label">THE TRANSCRIPT (EXCERPTED)</div>
+      <p>0:00 — Honking begins. Confident.<br>
+      4:12 — Honking continues. This reporter now believes the goose is describing a place.<br>
+      9:47 — A pause of six seconds. The longest in the recording. This reporter has listened to this silence more than to any of the honking.<br>
+      16:03 — Honking resumes, softer. Something has been conceded.<br>
+      22:30 — Wing sound. The goose has moved closer to the machine.<br>
+      27:55 — The sound this reporter has previously described as "perhaps." Reviewed at quarter speed, it remains "perhaps."<br>
+      31:00 — Honking ends. The goose remains for another ninety seconds, saying nothing.</p>
+      <div class="typed-label">THE FINDING</div>
+      <p>This reporter set out to determine what the goose said. This reporter has instead determined that the goose stayed. Ninety seconds after it had finished, with nothing left to report, the goose stayed by the machine, the way one lingers in a doorway when the conversation was the point.</p>
+      <p>The investigation is closed. This reporter has fed the goose. This reporter would like it entered into the record that the goose accepted.</p>
+    </div>
+    <div class="pull">"This reporter set out to determine what the goose said. This reporter has instead determined that the goose stayed."<small>— From the Transcript, Day Eleven</small></div>
+    <p class="fine-center">Editor's note: Barty went home early Thursday and did not say why. We are all extremely pleased with him. — D.P.</p>
+  </div>
+</div>
+
+<!-- ── p9 THIS DAY IN HISTORY ───────────────────────── -->
+<div class="page" id="p9">
+  <div class="sheet">
+    <div class="kicker">The Historical Record, Improved</div>
+    <h2 class="head">This Day in History</h2>
+    <p class="byline">Compiled by Prof. Thaddeus Bunkle &middot; <span>Holder of a Framed Certificate</span></p>
+    <ul class="hist">
+      <li><span class="yr">64,000,000 B.C.</span> Gerald the triceratops, having looked slightly to the left for a million years, looks slightly to the right. The herd, moved, calls it "a range."<sup>1</sup></li>
+      <li><span class="yr">A.D. 1104</span> A stool in Anjou develops a wobble. Three generations decline to fix it. The fourth fixes it and is not spoken to until Lent.<sup>2</sup></li>
+      <li><span class="yr">1387</span> The first recorded correspondence between a household and its bees, in Somerset. The bees are informed of a death, a marriage, and a change in jam supplier. They are reported to have taken the third hardest.<sup>3</sup></li>
+      <li><span class="yr">1602</span> A man in Lower Pemberton listens to another man for thirty-one minutes without once preparing his reply. The village erects no monument, having agreed the achievement speaks for itself.<sup>4</sup></li>
+      <li><span class="yr">1841</span> Gentle Rapids installs its first public bench. It is level. Complaints are immediate and unanimous.<sup>5</sup></li>
+      <li><span class="yr">1978</span> The bench by the boat ramp begins to wobble. Nobody investigates. This, historians now agree, was the correct response and remains the town's finest hour.<sup>6</sup></li>
+    </ul>
+    <div class="footnotes">
+      1. See footnote 6.&nbsp;&nbsp;
+      2. The stool is believed to have been doing its best.&nbsp;&nbsp;
+      3. Source: the bees, indirectly.&nbsp;&nbsp;
+      4. See footnote 3.&nbsp;&nbsp;
+      5. The bench was later un-leveled by weather, to general relief.&nbsp;&nbsp;
+      6. See footnote 1.
+    </div>
+  </div>
+</div>
+
+<!-- ── p10 POETRY CORNER ────────────────────────────── -->
+<div class="page" id="p10">
+  <div class="sheet">
+    <div class="kicker">The Poetry Corner</div>
+    <h2 class="head">Ode to the Wobble</h2>
+    <p class="byline">By Eugene Tippet &middot; <span>Staff Poet</span></p>
+    <div class="poem">
+      They came with shims. They came with levels.<br>
+      They came to end your gentle revels.<br>
+      But you have tipped since seventy-eight,<br>
+      And we have grown to like the gait.<br><br>
+      A perfect bench holds still and waits.<br>
+      A perfect bench participates<br>
+      In nothing. But you lean and sway<br>
+      And greet whoever comes your way.<br><br>
+      So keep your fault, you crooked friend.<br>
+      We voted. You will never mend.<br>
+      And every Sunday, Ida Frey<br>
+      Will tip a little. So will they.
+    </div>
+    <div class="rule-orn"><i></i></div>
+    <p class="fine-center poem-note">Eugene has been told this is his finest work, again. — D.P.<br>He has one poem left. He does not know this. We are handling it delicately. — D.P.</p>
+  </div>
+</div>
+
+<!-- ── p11 SOUND COUNSEL: BUNKLE ────────────────────── -->
+<div class="page" id="p11">
+  <div class="sheet">
+    <div class="kicker">Sound Counsel</div>
+    <h2 class="head">Prof. Bunkle Answers Historically</h2>
+    <p class="byline">This Week's Counselor: <span>Prof. Thaddeus Bunkle</span></p>
+    <div class="letter">
+      <p class="q"><b>Dear Professor:</b> My brother and I have not spoken in two years over something neither of us can now recall. How do we begin again? — <i>Estranged, on Quarry Road</i></p>
+      <p class="a">Consult the Anjou stool of 1104. Three generations declined to fix the wobble; the fourth fixed it and was frozen out until Lent, at which point everyone was too cold and too hungry to continue and the matter dissolved over soup. History is unambiguous: nobody has ever resumed a friendship by discussing why it stopped. They resumed it by arriving with soup. Bring soup. Do not bring the subject.<sup>1</sup> — T.B.</p>
+    </div>
+    <div class="letter">
+      <p class="q"><b>Dear Professor:</b> I have been offered a promotion that I do not want, and everyone tells me I should be thrilled. What do I do? — <i>Rising, Reluctantly</i></p>
+      <p class="a">In 1511 a man in Lower Pemberton was made village reeve against his wishes and served forty years with quiet competence and no joy whatsoever. His successor declined the post, kept his orchard, and is remembered — the records are quite clear — as the happier of the two, though only one of them has a road named after him. History offers you both outcomes and declines to choose. That is what history is for.<sup>2</sup> — T.B.</p>
+    </div>
+    <div class="letter">
+      <p class="q"><b>Dear Professor:</b> Is it foolish to be fond of an object? I am sixty-one and I have cried about a bench. — <i>Sentimental, by the Ramp</i></p>
+      <p class="a">Consult the Somerset correspondence of 1387, in which a household formally notified its bees of a death, a marriage, and a change in jam supplier. Note the order. Note that the bees took the third hardest. Attachment does not distribute itself according to importance; it distributes itself according to how often a thing has been present. Your bench has been present since 1978. Cry about the bench.<sup>3</sup> — T.B.</p>
+    </div>
+    <div class="footnotes">
+      1. See footnote 3.&nbsp;&nbsp; 2. The orchard is also gone now. This does not affect the argument.&nbsp;&nbsp; 3. See footnote 1.
+    </div>
+    <p class="fine-center">Sound Counsel rotates among the staff. Next week: Barty Quill, Esq., investigatively.</p>
+  </div>
+</div>
+
+<!-- ── p12 LETTERS ──────────────────────────────────── -->
+<div class="page" id="p12">
+  <div class="sheet">
+    <div class="kicker">Correspondence</div>
+    <h2 class="head">Letters to the Editor</h2>
+    <p class="deck">Concerning benches, bees, and one very patient rowboat</p>
+    <div class="letter">
+      <p class="q"><b>Dear Register:</b> I withdrew my own petition on Thursday and I have not stopped thinking about it. I spent forty years noticing things nobody else noticed, and it turns out they were noticing the whole time and simply not saying. I am not sure what to do with the rest of my life now. — <i>Harold Knapp</i></p>
+      <p class="a">Dear Harold: Notice something else. The gazebo has been standing quietly since before either of us and has never been formally admired. Take your time. Take a folding chair. We'll print whatever you find. — D.P.</p>
+    </div>
+    <div class="letter">
+      <p class="q"><b>To the Editor:</b> I took up Howard's waving shift at Birch and Main six weeks ago. On Thursday the 7:40 freight sounded its horn as it passed. I do not claim it was for me. I am simply reporting it, as I was told the freight waves on Thursdays. — <i>A New Waver</i></p>
+      <p class="a">Dear Waver: It was for you. Howard waited eleven years for that horn and got it in his fourth. You have made excellent time. Keep your hand up. — D.P.</p>
+    </div>
+    <div class="letter">
+      <p class="q"><b>Editor:</b> My haunted ladder and my haunted broom have been in the same hallway for two weeks. The broom now sweeps under the ladder. The ladder now climbs only to the third rung, which is where the broom can reach. I do not know what I am witnessing but I have started leaving the hall light on. — <i>Satisfied, Rural Route 2</i></p>
+      <p class="a">Dear Satisfied: You are witnessing an accommodation, which is the highest thing two households can achieve. Leave the light on. Mildred has asked to be kept informed and has, I regret to report, begun a file. — D.P.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── p13 OBITUARY + CORRECTIONS ───────────────────── -->
+<div class="page" id="p13">
+  <div class="sheet">
+    <div class="kicker">Departures, Gently</div>
+    <h2 class="obit-name">THE 1978 SHIM</h2>
+    <p class="obit-dates">Manufactured 1978 — Retired, Unused, 2026</p>
+    <div class="body-copy">
+      <p>The shim, a small wedge of cedar cut forty-eight years ago for the express purpose of leveling the bench by the boat ramp, has retired without ever having been installed, surrounded by tools that respected it.</p>
+      <p>Cut in the autumn of 1978 by a carpenter whose name has not survived, the shim was carried to the boat ramp, held up to the gap beneath the bench's left foot, and then — for reasons lost to the record — put back in the apron pocket. It remained in one apron pocket or another for four decades, passed between three carpenters, each of whom understood without being told that it was not to be used.</p>
+      <p>"It fit," said the carpenter who inherited it last, turning it over on his porch this week, the pie cooling beside him. "That's the thing people won't understand. It fit perfectly. Every one of us checked. And every one of us put it back."</p>
+      <p>The shim is survived by the wobble, now protected by unanimous vote, and by the bench, which never knew how close it came. It will be kept in the toolbox. "You don't throw out a shim," the carpenter said. "You just don't use it. There's a difference, and it took me thirty years to learn it."</p>
+    </div>
+    <div class="dbl"></div>
+    <div class="note-box">
+      <div class="nb-title">The Corrections Box</div>
+      <ul class="corrections">
+        <li>Last issue we reported the cannery whistle had fallen silent. Several readers write that it hums if you stand near it and wait. We have stood near it and waited. They are correct. We retract the silence.</li>
+        <li>We described the bench as "wobbly." The council has since designated it Load-Bearing to the Experience, and we adopt the term with apologies to the bench.</li>
+        <li>The <em>Register</em> misspelled "pelican" zero times again. Mr. Merriweather asked us not to mention it. We have mentioned it. He is delighted.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ── p14 ADVERTISEMENTS ───────────────────────────── -->
+<div class="page" id="p14">
+  <div class="sheet">
+    <div class="kicker">Advertisements of Distinction</div>
+    <div class="ad">
+      <div class="ad-head">TUBB &amp; TUBB, EST. WHENEVER</div>
+      <div class="ad-sub">"The Town's Oldest Firm. Of What, We Cannot Say."</div>
+      <div class="ad-points">
+        Reasonable rates &middot; Gentle handshakes &middot; Now offering naps (Mr. O. Tubb consulting)<br>
+        NEW: Second opinions on whether to leave things alone. Our specialty. Our only specialty.
+      </div>
+      <div class="ad-price">CONSULTATION: FREE &mdash; ADVICE: "DON'T"</div>
+      <div class="ad-fine">Tubb &amp; Tubb has advised against every repair in Gentle Rapids since 1849 and has been proven correct in all but one instance, which we do not discuss.</div>
+    </div>
+    <div class="ad small">
+      <div class="ad-head">KNAPP, ADMIRATION SERVICES</div>
+      <div class="ad-sub">Now Accepting the Gazebo. Rates Negotiable. Folding Chair Included.</div>
+      <div class="ad-points">Formerly Knapp &amp; Son. Still no son. Increasingly at peace with it.</div>
+    </div>
+    <div class="ad small">
+      <div class="ad-head">DOWNSTAIRS HONEY</div>
+      <div class="ad-sub">We Did Not Authorize This Advertisement. — Upstairs</div>
+      <div class="ad-points">Available Thursdays. Leave payment on the stair. Do not knock.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── p15 CLASSIFIEDS ──────────────────────────────── -->
+<div class="page" id="p15">
+  <div class="sheet">
+    <div class="kicker">The Back Pages</div>
+    <h2 class="head">Classifieds</h2>
+    <div class="cl-section">FOR SALE</div>
+    <ul class="cl">
+      <li><b>ONE (1) CEDAR SHIM,</b> 1978, unused, perfect fit. Not for sale. Listed only so the town knows where it is. — the carpenter</li>
+      <li><b>ACCORDION,</b> previously free to a good lap, now returned. The lap was good. The neighbors were honest. $2 or best excuse. — M. Vance</li>
+      <li><b>HONEY,</b> Thursdays, front stair. Payment by envelope. Do not knock. — Downstairs</li>
+    </ul>
+    <div class="cl-section">WANTED</div>
+    <ul class="cl">
+      <li><b>SOMETHING ELSE NOBODY HAS NOTICED.</b> I have the time and the folding chair. Suggestions to this newspaper. — H. Knapp</li>
+      <li><b>A PIANO,</b> apparently. Inquire second floor, Grange Hall. It has become important that we produce one by Thursday.</li>
+      <li><b>SOMEONE TO SIT ON THE OTHER END</b> of the bench, boat ramp, Sundays. It tips better with two. — I. Frey</li>
+    </ul>
+    <div class="cl-section">SERVICES</div>
+    <ul class="cl">
+      <li><b>TRANSCRIPTION,</b> any length, any species. Eleven-day turnaround. Discretion assured. Waterfowl welcome. — B. Quill, Esq.</li>
+      <li><b>DUCK GREETINGS,</b> arrivals and departures, boat ramp, mornings. Now addressed as "sir" by at least one client. No charge; bread appreciated. — mgmt. (R.)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── p16 PERSONALS ────────────────────────────────── -->
+<div class="page" id="p16">
+  <div class="sheet">
+    <div class="kicker">The Back Pages</div>
+    <h2 class="head">The Personals</h2>
+    <p class="deck">Curated by Mildred Vance, who reports "a quiet week, thank goodness, I need the rest"<br><span class="mv" style="display:inline-block">(she does not need the rest) — the staff</span></p>
+    <ul class="pers">
+      <li><b>MAN, 44,</b> and <b>WOMAN, 46,</b> of the ferry schedule and the rowboat, report six consecutive on-time departures. She rows. He announces the stops. There are no stops. They are, by every measure available to this newspaper, thriving.
+        <span class="mv">I take full credit. — M.V.</span></li>
+      <li><b>GENTLEMAN, 61,</b> of the 340 board games, reports it is no longer his move. It is hers. It has been hers for three weeks. He would like her to know he is not rushing her and is, in fact, enjoying the wait more than he expected.
+        <span class="mv">She's going to win. He knows. That's the point. — M.V.</span></li>
+      <li><b>WOMAN, 71,</b> semi-retired from mischief, and her accomplice have been asked to stop unsanctioned gardening at the gazebo. They have complied. The gazebo has never looked better and nobody can prove anything.
+        <span class="mv">I was the accomplice. I remain the accomplice. — M.V.</span></li>
+      <li><b>CARPENTER, 58,</b> has a pie and no one to eat it with. Not seeking sympathy. Seeking a fork. Will explain the shim if asked, but would rather not be asked.
+        <span class="mv">Ida Frey has a fork and a bench that seats two. — M.V.</span></li>
+      <li><b>EUGENE, 39,</b> poet, reports his audience of one attended a reading, stayed after, and asked a question about the third stanza. He has not slept. He has, however, written.
+        <span class="mv">THE THIRD STANZA. She asked about the THIRD STANZA. — M.V.</span></li>
+      <li><b>COLONY, ageless,</b> first floor. Not seeking anything. Simply making itself known after thirty-nine years. Thursdays preferred. Bring nothing; the piano is enough.
+        <span class="mv">This is my favorite ad I have ever run. — M.V.</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── p17 BACK COVER ───────────────────────────────── -->
+<div class="page" id="p17">
+  <div class="sheet cover-sheet">
+    <div class="cv-merri">Merriweather's</div>
+    <div class="cv-register" style="font-size: clamp(2rem, 8vw, 3.6rem)">REGISTER</div>
+    <div class="cv-of">OF AGREEABLE OCCURRENCES</div>
+    <div class="sub-box">
+      <div class="ad-head">SUBSCRIBE TO THE REGISTER</div>
+      <div class="ad-sub">Two cents weekly, billed never.</div>
+      <div class="ad-points">Delivered by whoever is going your way. Three issues in, and the wobble has held.</div>
+    </div>
+    <div class="note-box" style="text-align:left">
+      <div class="nb-title">Newsroom Notes</div>
+      <ul>
+        <li>Barty has closed the goose investigation and asked that the tapes be kept anyway. They have been. The Reginald question remains open, though Mr. Merriweather now says he is "in no hurry, and neither is Sir." — D.P.</li>
+        <li>We are looking for a piano. This is not a joke item. Please see the classifieds. — D.P.</li>
+      </ul>
+    </div>
+    <p class="next-tease"><b>NEXT ISSUE:</b> The gazebo, admired at last — Harold Knapp reports.<br>Also: Barty Quill takes Sound Counsel, investigatively.</p>
+    <div class="stamp">ONWARD, GENTLY — D.P.</div>
+    <div class="cv-foot">A Bumbloo Books publication. Every story guaranteed false and pleasant.</div>
+  </div>
+</div>
+
+</div><!-- /track -->
+<div class="dot-row" id="dotRow"></div>
+
+<script>
+window.STORY_PAGES = 18;
+(function () {
+  'use strict';
+  var PAGES = window.STORY_PAGES, current = 0;
+  var track = document.getElementById('track');
+  var counter = document.getElementById('navCounter');
+  var prevBtn = document.getElementById('btnPrev');
+  var nextBtn = document.getElementById('btnNext');
+  var dots = [];
+
+  function update() {
+    track.style.transform = 'translateX(' + (-current * 100) + 'vw)';
+    counter.textContent = (current + 1) + ' / ' + PAGES;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === PAGES - 1;
+    dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+    try { history.replaceState(null, '', '#' + current); } catch (e) {}
+    var pg = document.getElementById('p' + current);
+    if (pg) pg.scrollTop = pg.scrollTop; // keep scroll where reader left it
+  }
+
+  window.goTo = function (n) { current = Math.max(0, Math.min(PAGES - 1, n)); update(); };
+  window.prev = function () { window.goTo(current - 1); };
+  window.next = function () { window.goTo(current + 1); };
+
+  var dotRow = document.getElementById('dotRow');
+  for (var i = 0; i < PAGES; i++) {
+    var d = document.createElement('button');
+    d.className = 'dot';
+    d.setAttribute('aria-label', 'Page ' + (i + 1));
+    d.addEventListener('click', (function (idx) { return function () { window.goTo(idx); }; })(i));
+    dotRow.appendChild(d);
+    dots.push(d);
+  }
+
+  var hash = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(hash) && hash >= 0 && hash < PAGES) current = hash;
+
+  var startX = null;
+  document.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? window.next() : window.prev(); }
+    startX = null;
+  }, { passive: true });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') window.next();
+    if (e.key === 'ArrowLeft') window.prev();
+  });
+
+  window.shareIssue = function () {
+    var url = location.origin + location.pathname;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        var btn = document.querySelector('.nav-share');
+        var orig = btn.textContent;
+        btn.textContent = 'COPIED!';
+        setTimeout(function () { btn.textContent = orig; }, 2000);
+      });
+    }
+  };
+
+  update();
+})();
+</script>
+</body>
+</html>
